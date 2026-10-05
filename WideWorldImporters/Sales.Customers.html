@@ -1,0 +1,603 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sales.Customers</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Sales.Customers">Sales.Customers</a></span><span class="rc">
+									(663 rows)
+								</span></h3><br><p class="td">Main entity tables for customers (organizations or individuals)</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>CustomerID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[CustomerID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used for reference to a customer within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>CustomerName</span></td>
+        <td class="tr"><span>nvarchar(100)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Customer's full name (usually a trading name)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>BillToCustomerID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Customer that this is billed to (usually the same customer but can be another parent company)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>CustomerCategoryID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Customer's category</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>BuyingGroupID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Customer's buying group (optional)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>PrimaryContactPersonID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary contact</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>AlternateContactPersonID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Alternate contact</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>DeliveryMethodID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Standard delivery method for stock items sent to this customer</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>DeliveryCityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ID of the delivery city for this address</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>PostalCityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ID of the postal city for this address</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>CreditLimit</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Credit limit for this customer (NULL if unlimited)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>AccountOpenedDate</span></td>
+        <td class="tr"><span>date</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date this customer account was opened</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>StandardDiscountPercentage</span></td>
+        <td class="tr"><span>decimal(18,3)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Standard discount offered to this customer</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>IsStatementSent</span></td>
+        <td class="tr"><span>bit</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Is a statement sent to this customer? (Or do they just pay on each invoice?)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>IsOnCreditHold</span></td>
+        <td class="tr"><span>bit</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Is this customer on credit hold? (Prevents further deliveries to this customer)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>PaymentDays</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Number of days for payment of an invoice (ie payment terms)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>PhoneNumber</span></td>
+        <td class="tr"><span>nvarchar(20)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Phone number</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>FaxNumber</span></td>
+        <td class="tr"><span>nvarchar(20)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Fax number</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DeliveryRun</span></td>
+        <td class="tr"><span>nvarchar(5)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Normal delivery run for this customer</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>RunPosition</span></td>
+        <td class="tr"><span>nvarchar(5)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Normal position in the delivery run for this customer</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>WebsiteURL</span></td>
+        <td class="tr"><span>nvarchar(256)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">URL for the website for this customer</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DeliveryAddressLine1</span></td>
+        <td class="tr"><span>nvarchar(60)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">First delivery address line for the customer</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DeliveryAddressLine2</span></td>
+        <td class="tr"><span>nvarchar(60)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Second delivery address line for the customer</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DeliveryPostalCode</span></td>
+        <td class="tr"><span>nvarchar(10)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Delivery postal code for the customer</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DeliveryLocation</span></td>
+        <td class="tr"><span>geography</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Geographic location for the customer's office/warehouse</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>PostalAddressLine1</span></td>
+        <td class="tr"><span>nvarchar(60)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">First postal address line for the customer</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>PostalAddressLine2</span></td>
+        <td class="tr"><span>nvarchar(60)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Second postal address line for the customer</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>PostalPostalCode</span></td>
+        <td class="tr"><span>nvarchar(10)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Postal code for the customer when sending by mail</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidFrom</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidTo</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Sales_Customers</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(0.15% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>UQ_Sales_Customers_CustomerName</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+          <li>
+													(0.15% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>CustomerName</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Customers_AlternateContactPersonID</h5>
+        <ul class="io">
+          <li>
+													(0.25% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>AlternateContactPersonID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Customers_BuyingGroupID</h5>
+        <ul class="io">
+          <li>
+													(33.33% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>BuyingGroupID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Customers_CustomerCategoryID</h5>
+        <ul class="io">
+          <li>
+													(20% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>CustomerCategoryID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Customers_DeliveryCityID</h5>
+        <ul class="io">
+          <li>
+													(0.15% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>DeliveryCityID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Customers_DeliveryMethodID</h5>
+        <ul class="io">
+          <li>
+													(100% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>DeliveryMethodID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Customers_PostalCityID</h5>
+        <ul class="io">
+          <li>
+													(0.15% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>PostalCityID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Customers_PrimaryContactPersonID</h5>
+        <ul class="io">
+          <li>
+													(0.15% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>PrimaryContactPersonID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Sales_Customers_Perf_20160301_06</h5>
+        <ul class="io">
+          <li>
+													(0.15% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Improves performance of order picking and invoicing</p><br><ul class="il">
+          <li>IsOnCreditHold</li>
+          <li>CustomerID</li>
+          <li>BillToCustomerID</li>
+          <li>PrimaryContactPersonID<span class="ilo">
+												(Included)
+											</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.Cities.html">Application.Cities</a></h5><br><br><ul class="rl">
+          <li>CityID<span class="rlc">
+													(DeliveryCityID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.Cities.html">Application.Cities</a></h5><br><br><ul class="rl">
+          <li>CityID<span class="rlc">
+													(PostalCityID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.DeliveryMethods.html">Application.DeliveryMethods</a></h5><br><br><ul class="rl">
+          <li>DeliveryMethodID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(AlternateContactPersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(PrimaryContactPersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.BuyingGroups.html">Sales.BuyingGroups</a></h5><br><br><ul class="rl">
+          <li>BuyingGroupID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.CustomerCategories.html">Sales.CustomerCategories</a></h5><br><br><ul class="rl">
+          <li>CustomerCategoryID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>CustomerID<span class="rlc">
+													(BillToCustomerID)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>BillToCustomerID<span class="rlc">
+													(CustomerID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.CustomerTransactions.html">Sales.CustomerTransactions</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Invoices.html">Sales.Invoices</a></h5><br><br><ul class="rl">
+          <li>BillToCustomerID<span class="rlc">
+													(CustomerID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Invoices.html">Sales.Invoices</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Orders.html">Sales.Orders</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SpecialDeals.html">Sales.SpecialDeals</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItemTransactions.html">Warehouse.StockItemTransactions</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Function <h5><a href="./Website.CalculateCustomerPrice.html">Website.CalculateCustomerPrice</a></h5><br><br><ul class="rl">
+          <li>BuyingGroupID</li>
+          <li>CustomerCategoryID</li>
+          <li>CustomerID</li>
+        </ul><br></li>
+      <li class="un">Policy <h5><a href="./Application.FilterCustomersBySalesTerritoryRole.html">Application.FilterCustomersBySalesTerritoryRole</a></h5><br><br><ul class="rl">
+          <li>DeliveryCityID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Integration.GetCustomerUpdates.html">Integration.GetCustomerUpdates</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>ValidFrom</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Integration.GetOrderUpdates.html">Integration.GetOrderUpdates</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>DeliveryCityID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Integration.GetSaleUpdates.html">Integration.GetSaleUpdates</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>DeliveryCityID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.InvoiceCustomerOrders.html">Website.InvoiceCustomerOrders</a></h5><br><br><ul class="rl">
+          <li>BillToCustomerID</li>
+          <li>CustomerID</li>
+          <li>DeliveryAddressLine1</li>
+          <li>DeliveryAddressLine2</li>
+          <li>DeliveryMethodID</li>
+          <li>DeliveryRun</li>
+          <li>PrimaryContactPersonID</li>
+          <li>RunPosition</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.SearchForCustomers.html">Website.SearchForCustomers</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>CustomerName</li>
+          <li>DeliveryCityID</li>
+          <li>FaxNumber</li>
+          <li>PhoneNumber</li>
+          <li>PrimaryContactPersonID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.SearchForPeople.html">Website.SearchForPeople</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>CustomerName</li>
+          <li>PrimaryContactPersonID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Website.Customers.html">Website.Customers</a></h5><br><br><ul class="rl">
+          <li>AlternateContactPersonID</li>
+          <li>BuyingGroupID</li>
+          <li>CustomerCategoryID</li>
+          <li>CustomerID</li>
+          <li>CustomerName</li>
+          <li>DeliveryCityID</li>
+          <li>DeliveryLocation</li>
+          <li>DeliveryMethodID</li>
+          <li>DeliveryRun</li>
+          <li>FaxNumber</li>
+          <li>PhoneNumber</li>
+          <li>PrimaryContactPersonID</li>
+          <li>RunPosition</li>
+          <li>WebsiteURL</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

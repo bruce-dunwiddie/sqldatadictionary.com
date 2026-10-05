@@ -1,0 +1,159 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>HumanResources.vEmployee</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						View <a id="HumanResources.vEmployee">HumanResources.vEmployee</a></span></h3><br><p class="td">Employee names and addresses.</p><br><table class="v b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td class="cr"><span>BusinessEntityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Title</span></td>
+        <td class="tr"><span>nvarchar(8)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>FirstName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>MiddleName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>LastName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Suffix</span></td>
+        <td class="tr"><span>nvarchar(10)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>JobTitle</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>PhoneNumber</span></td>
+        <td class="tr"><span>Phone(nvarchar(25))</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>PhoneNumberType</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>EmailAddress</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>EmailPromotion</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>AddressLine1</span></td>
+        <td class="tr"><span>nvarchar(60)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>AddressLine2</span></td>
+        <td class="tr"><span>nvarchar(60)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>City</span></td>
+        <td class="tr"><span>nvarchar(30)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>StateProvinceName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>PostalCode</span></td>
+        <td class="tr"><span>nvarchar(15)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>CountryRegionName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>AdditionalContactInfo</span></td>
+        <td class="tr"><span>xml</span></td>
+        <td class="nr">X</td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./HumanResources.Employee.html">HumanResources.Employee</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>JobTitle</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.Address.html">Person.Address</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>AddressLine1</li>
+          <li>AddressLine2</li>
+          <li>City</li>
+          <li>PostalCode</li>
+          <li>StateProvinceID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.BusinessEntityAddress.html">Person.BusinessEntityAddress</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>BusinessEntityID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.CountryRegion.html">Person.CountryRegion</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+          <li>Name</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.EmailAddress.html">Person.EmailAddress</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>EmailAddress</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.Person.html">Person.Person</a></h5><br><br><ul class="rl">
+          <li>AdditionalContactInfo</li>
+          <li>BusinessEntityID</li>
+          <li>EmailPromotion</li>
+          <li>FirstName</li>
+          <li>LastName</li>
+          <li>MiddleName</li>
+          <li>Suffix</li>
+          <li>Title</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.PersonPhone.html">Person.PersonPhone</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>PhoneNumber</li>
+          <li>PhoneNumberTypeID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.PhoneNumberType.html">Person.PhoneNumberType</a></h5><br><br><ul class="rl">
+          <li>Name</li>
+          <li>PhoneNumberTypeID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.StateProvince.html">Person.StateProvince</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+          <li>Name</li>
+          <li>StateProvinceID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

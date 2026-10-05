@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Person.PhoneNumberType</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Person.PhoneNumberType">Person.PhoneNumberType</a></span><span class="rc">
+									(3 rows)
+								</span></h3><br><p class="td">Type of phone number of a person.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>PhoneNumberTypeID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir">X</td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key for telephone number type records.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Name</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Name of the telephone number type</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_PhoneNumberType_PhoneNumberTypeID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>PhoneNumberTypeID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Person.PersonPhone.html">Person.PersonPhone</a></h5><br><br><ul class="rl">
+          <li>PhoneNumberTypeID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">View <h5><a href="./HumanResources.vEmployee.html">HumanResources.vEmployee</a></h5><br><br><ul class="rl">
+          <li>Name</li>
+          <li>PhoneNumberTypeID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Purchasing.vVendorWithContacts.html">Purchasing.vVendorWithContacts</a></h5><br><br><ul class="rl">
+          <li>Name</li>
+          <li>PhoneNumberTypeID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vIndividualCustomer.html">Sales.vIndividualCustomer</a></h5><br><br><ul class="rl">
+          <li>Name</li>
+          <li>PhoneNumberTypeID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vSalesPerson.html">Sales.vSalesPerson</a></h5><br><br><ul class="rl">
+          <li>Name</li>
+          <li>PhoneNumberTypeID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vStoreWithContacts.html">Sales.vStoreWithContacts</a></h5><br><br><ul class="rl">
+          <li>Name</li>
+          <li>PhoneNumberTypeID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,270 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Warehouse.StockItemTransactions</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Warehouse.StockItemTransactions">Warehouse.StockItemTransactions</a></span><span class="rc">
+									(236,667 rows)
+								</span></h3><br><p class="td">Transactions covering all movements of all stock items</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>StockItemTransactionID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[TransactionID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used to refer to a stock item transaction within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>StockItemID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">StockItem for this transaction</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>TransactionTypeID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Type of transaction</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>CustomerID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Customer for this transaction (if applicable)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>InvoiceID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ID of an invoice (for transactions associated with an invoice)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>SupplierID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Supplier for this stock transaction (if applicable)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>PurchaseOrderID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ID of an purchase order (for transactions associated with a purchase order)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TransactionOccurredWhen</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time when the transaction occurred</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Quantity</span></td>
+        <td class="tr"><span>decimal(18,3)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Quantity of stock movement (positive is incoming stock, negative is outgoing)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LastEditedWhen</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>sysdatetime()</span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Warehouse_StockItemTransactions</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>
+													(&lt; 0.01% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>StockItemTransactionID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>CCX_Warehouse_StockItemTransactions</h5>
+        <ul class="io">
+          <li>(Clustered)</li>
+          <li>(Columnstore)</li>
+        </ul><br><br><ul class="il"></ul>
+      </li><br><li class="in">
+        <h5>FK_Warehouse_StockItemTransactions_CustomerID</h5>
+        <ul class="io">
+          <li>
+													(0.15% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Warehouse_StockItemTransactions_InvoiceID</h5>
+        <ul class="io">
+          <li>
+													(&lt; 0.01% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>InvoiceID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Warehouse_StockItemTransactions_PurchaseOrderID</h5>
+        <ul class="io">
+          <li>
+													(0.05% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>PurchaseOrderID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Warehouse_StockItemTransactions_StockItemID</h5>
+        <ul class="io">
+          <li>
+													(0.44% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>StockItemID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Warehouse_StockItemTransactions_SupplierID</h5>
+        <ul class="io">
+          <li>
+													(12.5% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>SupplierID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Warehouse_StockItemTransactions_TransactionTypeID</h5>
+        <ul class="io">
+          <li>
+													(33.33% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>TransactionTypeID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.TransactionTypes.html">Application.TransactionTypes</a></h5><br><br><ul class="rl">
+          <li>TransactionTypeID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.PurchaseOrders.html">Purchasing.PurchaseOrders</a></h5><br><br><ul class="rl">
+          <li>PurchaseOrderID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.Suppliers.html">Purchasing.Suppliers</a></h5><br><br><ul class="rl">
+          <li>SupplierID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Invoices.html">Sales.Invoices</a></h5><br><br><ul class="rl">
+          <li>InvoiceID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItems.html">Warehouse.StockItems</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./Integration.GetMovementUpdates.html">Integration.GetMovementUpdates</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>InvoiceID</li>
+          <li>LastEditedWhen</li>
+          <li>PurchaseOrderID</li>
+          <li>Quantity</li>
+          <li>StockItemID</li>
+          <li>StockItemTransactionID</li>
+          <li>SupplierID</li>
+          <li>TransactionOccurredWhen</li>
+          <li>TransactionTypeID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.InvoiceCustomerOrders.html">Website.InvoiceCustomerOrders</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>InvoiceID</li>
+          <li>LastEditedBy</li>
+          <li>LastEditedWhen</li>
+          <li>PurchaseOrderID</li>
+          <li>Quantity</li>
+          <li>StockItemID</li>
+          <li>SupplierID</li>
+          <li>TransactionOccurredWhen</li>
+          <li>TransactionTypeID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

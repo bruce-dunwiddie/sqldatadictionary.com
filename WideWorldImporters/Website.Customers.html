@@ -1,0 +1,127 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Website.Customers</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						View <a id="Website.Customers">Website.Customers</a></span></h3><br><table class="v b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td class="cr"><span>CustomerID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>CustomerName</span></td>
+        <td class="tr"><span>nvarchar(100)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>CustomerCategoryName</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>PrimaryContact</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>AlternateContact</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>PhoneNumber</span></td>
+        <td class="tr"><span>nvarchar(20)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>FaxNumber</span></td>
+        <td class="tr"><span>nvarchar(20)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>BuyingGroupName</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>WebsiteURL</span></td>
+        <td class="tr"><span>nvarchar(256)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>DeliveryMethod</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>CityName</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>DeliveryLocation</span></td>
+        <td class="tr"><span>geography</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>DeliveryRun</span></td>
+        <td class="tr"><span>nvarchar(5)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>RunPosition</span></td>
+        <td class="tr"><span>nvarchar(5)</span></td>
+        <td class="nr">X</td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./Application.Cities.html">Application.Cities</a></h5><br><br><ul class="rl">
+          <li>CityID</li>
+          <li>CityName</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Application.DeliveryMethods.html">Application.DeliveryMethods</a></h5><br><br><ul class="rl">
+          <li>DeliveryMethodID</li>
+          <li>DeliveryMethodName</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>FullName</li>
+          <li>PersonID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.BuyingGroups.html">Sales.BuyingGroups</a></h5><br><br><ul class="rl">
+          <li>BuyingGroupID</li>
+          <li>BuyingGroupName</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.CustomerCategories.html">Sales.CustomerCategories</a></h5><br><br><ul class="rl">
+          <li>CustomerCategoryID</li>
+          <li>CustomerCategoryName</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>AlternateContactPersonID</li>
+          <li>BuyingGroupID</li>
+          <li>CustomerCategoryID</li>
+          <li>CustomerID</li>
+          <li>CustomerName</li>
+          <li>DeliveryCityID</li>
+          <li>DeliveryLocation</li>
+          <li>DeliveryMethodID</li>
+          <li>DeliveryRun</li>
+          <li>FaxNumber</li>
+          <li>PhoneNumber</li>
+          <li>PrimaryContactPersonID</li>
+          <li>RunPosition</li>
+          <li>WebsiteURL</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

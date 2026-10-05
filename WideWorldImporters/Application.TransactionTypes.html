@@ -1,0 +1,127 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Application.TransactionTypes</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Application.TransactionTypes">Application.TransactionTypes</a></span><span class="rc">
+									(13 rows)
+								</span></h3><br><p class="td">Types of customer, supplier, or stock transactions (ie: invoice, credit note, etc.)</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>TransactionTypeID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[TransactionTypeID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used for reference to a transaction type within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>TransactionTypeName</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Full name of the transaction type</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidFrom</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidTo</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Application_TransactionTypes</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(7.69% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>TransactionTypeID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>UQ_Application_TransactionTypes_TransactionTypeName</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+          <li>
+													(7.69% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>TransactionTypeName</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Purchasing.SupplierTransactions.html">Purchasing.SupplierTransactions</a></h5><br><br><ul class="rl">
+          <li>TransactionTypeID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.CustomerTransactions.html">Sales.CustomerTransactions</a></h5><br><br><ul class="rl">
+          <li>TransactionTypeID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItemTransactions.html">Warehouse.StockItemTransactions</a></h5><br><br><ul class="rl">
+          <li>TransactionTypeID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./Integration.GetTransactionTypeUpdates.html">Integration.GetTransactionTypeUpdates</a></h5><br><br><ul class="rl">
+          <li>TransactionTypeID</li>
+          <li>ValidFrom</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.InvoiceCustomerOrders.html">Website.InvoiceCustomerOrders</a></h5><br><br><ul class="rl">
+          <li>TransactionTypeID</li>
+          <li>TransactionTypeName</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

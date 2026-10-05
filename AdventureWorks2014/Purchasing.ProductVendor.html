@@ -1,0 +1,182 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Purchasing.ProductVendor</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Purchasing.ProductVendor">Purchasing.ProductVendor</a></span><span class="rc">
+									(460 rows)
+								</span></h3><br><p class="td">Cross-reference table mapping vendors with the products they supply.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>ProductID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key. Foreign key to Product.ProductID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>BusinessEntityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key. Foreign key to Vendor.BusinessEntityID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>AverageLeadTime</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">The average span of time (in days) between placing an order with the vendor and receiving the purchased product.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>StandardPrice</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">The vendor's usual selling price.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LastReceiptCost</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">The selling price when last purchased.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LastReceiptDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date the product was last received by the vendor.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>MinOrderQty</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">The maximum quantity that should be ordered.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>MaxOrderQty</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">The minimum quantity that should be ordered.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>OnOrderQty</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">The quantity currently on order.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>UnitMeasureCode</span></td>
+        <td class="tr"><span>nchar(3)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">The product's unit of measure.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_ProductVendor_ProductID_BusinessEntityID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>ProductID</li>
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_ProductVendor_BusinessEntityID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_ProductVendor_UnitMeasureCode</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>UnitMeasureCode</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Production.Product.html">Production.Product</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.UnitMeasure.html">Production.UnitMeasure</a></h5><br><br><ul class="rl">
+          <li>UnitMeasureCode</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.Vendor.html">Purchasing.Vendor</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br></ul>
+  </body>
+</html>

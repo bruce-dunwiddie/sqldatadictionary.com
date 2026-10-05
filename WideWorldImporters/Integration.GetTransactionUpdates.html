@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Integration.GetTransactionUpdates</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Procedure <a id="Integration.GetTransactionUpdates">Integration.GetTransactionUpdates</a></span></h3><br><table class="p b">
+      <tr class="h">
+        <th>Parameter</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Default</th>
+        <th class="s">Is Output</th>
+      </tr>
+      <tr>
+        <td><span>@LastCutoff</span></td>
+        <td class="s"><span>datetime2</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>@NewCutoff</span></td>
+        <td class="s"><span>datetime2</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+    </table><br><h4>Result:</h4><br><table class="p b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td><span>Date Key</span></td>
+        <td class="s"><span>date</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>WWI Customer Transaction ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>WWI Supplier Transaction ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>WWI Invoice ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>WWI Purchase Order ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>Supplier Invoice Number</span></td>
+        <td class="s"><span>nvarchar(20)</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>Total Excluding Tax</span></td>
+        <td class="s"><span>decimal(18,2)</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Tax Amount</span></td>
+        <td class="s"><span>decimal(18,2)</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Total Including Tax</span></td>
+        <td class="s"><span>decimal(18,2)</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Outstanding Balance</span></td>
+        <td class="s"><span>decimal(18,2)</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Is Finalized</span></td>
+        <td class="s"><span>bit</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>WWI Customer ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>WWI Bill To Customer ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>WWI Supplier ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>WWI Transaction Type ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>WWI Payment Method ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>Last Modified When</span></td>
+        <td class="s"><span>datetime2</span></td>
+        <td class="s c"></td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./Purchasing.SupplierTransactions.html">Purchasing.SupplierTransactions</a></h5><br><br><ul class="rl">
+          <li>AmountExcludingTax</li>
+          <li>IsFinalized</li>
+          <li>LastEditedWhen</li>
+          <li>OutstandingBalance</li>
+          <li>PaymentMethodID</li>
+          <li>PurchaseOrderID</li>
+          <li>SupplierID</li>
+          <li>SupplierInvoiceNumber</li>
+          <li>SupplierTransactionID</li>
+          <li>TaxAmount</li>
+          <li>TransactionAmount</li>
+          <li>TransactionDate</li>
+          <li>TransactionTypeID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.CustomerTransactions.html">Sales.CustomerTransactions</a></h5><br><br><ul class="rl">
+          <li>AmountExcludingTax</li>
+          <li>CustomerID</li>
+          <li>CustomerTransactionID</li>
+          <li>InvoiceID</li>
+          <li>IsFinalized</li>
+          <li>LastEditedWhen</li>
+          <li>OutstandingBalance</li>
+          <li>PaymentMethodID</li>
+          <li>TaxAmount</li>
+          <li>TransactionAmount</li>
+          <li>TransactionDate</li>
+          <li>TransactionTypeID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.Invoices.html">Sales.Invoices</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>InvoiceID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

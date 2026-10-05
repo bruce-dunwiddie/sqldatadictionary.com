@@ -1,0 +1,146 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>HumanResources.EmployeeDepartmentHistory</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="HumanResources.EmployeeDepartmentHistory">HumanResources.EmployeeDepartmentHistory</a></span><span class="rc">
+									(296 rows)
+								</span></h3><br><p class="td">Employee department transfers.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>BusinessEntityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Employee identification number. Foreign key to Employee.BusinessEntityID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>DepartmentID</span></td>
+        <td class="tr"><span>smallint</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Department in which the employee worked including currently. Foreign key to Department.DepartmentID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>ShiftID</span></td>
+        <td class="tr"><span>tinyint</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Identifies which 8-hour shift the employee works. Foreign key to Shift.Shift.ID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>StartDate</span></td>
+        <td class="tr"><span>date</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date the employee started work in the department.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>EndDate</span></td>
+        <td class="tr"><span>date</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date the employee left the department. NULL = Current department.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_EmployeeDepartmentHistory_BusinessEntityID_StartDate_DepartmentID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>BusinessEntityID</li>
+          <li>StartDate</li>
+          <li>DepartmentID</li>
+          <li>ShiftID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_EmployeeDepartmentHistory_DepartmentID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>DepartmentID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_EmployeeDepartmentHistory_ShiftID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>ShiftID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./HumanResources.Department.html">HumanResources.Department</a></h5><br><br><ul class="rl">
+          <li>DepartmentID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./HumanResources.Employee.html">HumanResources.Employee</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./HumanResources.Shift.html">HumanResources.Shift</a></h5><br><br><ul class="rl">
+          <li>ShiftID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">View <h5><a href="./HumanResources.vEmployeeDepartment.html">HumanResources.vEmployeeDepartment</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>DepartmentID</li>
+          <li>EndDate</li>
+          <li>StartDate</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./HumanResources.vEmployeeDepartmentHistory.html">HumanResources.vEmployeeDepartmentHistory</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>DepartmentID</li>
+          <li>EndDate</li>
+          <li>ShiftID</li>
+          <li>StartDate</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

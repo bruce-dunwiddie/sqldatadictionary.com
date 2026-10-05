@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Production.ProductDocument</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Production.ProductDocument">Production.ProductDocument</a></span><span class="rc">
+									(32 rows)
+								</span></h3><br><p class="td">Cross-reference table mapping products to related product documents.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>ProductID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Product identification number. Foreign key to Product.ProductID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>DocumentNode</span></td>
+        <td class="tr"><span>hierarchyid</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Document identification number. Foreign key to Document.DocumentNode.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_ProductDocument_ProductID_DocumentNode</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>ProductID</li>
+          <li>DocumentNode</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Production.Document.html">Production.Document</a></h5><br><br><ul class="rl">
+          <li>DocumentNode</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.Product.html">Production.Product</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br></ul>
+  </body>
+</html>

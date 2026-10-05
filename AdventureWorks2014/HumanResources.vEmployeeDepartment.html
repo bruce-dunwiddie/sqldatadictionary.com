@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>HumanResources.vEmployeeDepartment</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						View <a id="HumanResources.vEmployeeDepartment">HumanResources.vEmployeeDepartment</a></span></h3><br><p class="td">Returns employee name, title, and current department.</p><br><table class="v b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td class="cr"><span>BusinessEntityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Title</span></td>
+        <td class="tr"><span>nvarchar(8)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>FirstName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>MiddleName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>LastName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Suffix</span></td>
+        <td class="tr"><span>nvarchar(10)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>JobTitle</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Department</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>GroupName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>StartDate</span></td>
+        <td class="tr"><span>date</span></td>
+        <td class="nr"></td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./HumanResources.Department.html">HumanResources.Department</a></h5><br><br><ul class="rl">
+          <li>DepartmentID</li>
+          <li>GroupName</li>
+          <li>Name</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./HumanResources.Employee.html">HumanResources.Employee</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>JobTitle</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./HumanResources.EmployeeDepartmentHistory.html">HumanResources.EmployeeDepartmentHistory</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>DepartmentID</li>
+          <li>EndDate</li>
+          <li>StartDate</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.Person.html">Person.Person</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>FirstName</li>
+          <li>LastName</li>
+          <li>MiddleName</li>
+          <li>Suffix</li>
+          <li>Title</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

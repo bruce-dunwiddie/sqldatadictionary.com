@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Warehouse.VehicleTemperatures</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Warehouse.VehicleTemperatures">Warehouse.VehicleTemperatures</a></span><span class="rc">
+									(65,998 rows)
+								</span></h3><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>VehicleTemperatureID</span></td>
+        <td class="tr"><span>bigint</span></td>
+        <td class="ir">X</td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>VehicleRegistration</span></td>
+        <td class="tr"><span>nvarchar(20)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ChillerSensorNumber</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>RecordedWhen</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Temperature</span></td>
+        <td class="tr"><span>decimal(10,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>FullSensorData</span></td>
+        <td class="tr"><span>nvarchar(1000)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>IsCompressed</span></td>
+        <td class="tr"><span>bit</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>CompressedSensorData</span></td>
+        <td class="tr"><span>varbinary(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Warehouse_VehicleTemperatures</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>
+													(&lt; 0.01% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>VehicleTemperatureID</li>
+        </ul>
+      </li><br></ul>
+  </body>
+</html>

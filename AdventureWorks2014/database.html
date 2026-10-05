@@ -1,0 +1,500 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>AdventureWorks2014</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h1>AdventureWorks2014</h1>
+    <p class="lu">
+						(Last updated on Thu, Nov 26th, 2015 at 12:26 PM)
+					</p><br><p class="dd">AdventureWorks 2014 Sample OLTP Database</p><br><h2>Tables:</h2><br><table class="mc">
+      <tr>
+        <td><a href="./dbo.AWBuildVersion.html">dbo.AWBuildVersion</a><span class="rc">
+														(1 row)
+													</span><br><br><p class="td">Current version number of the AdventureWorks 2014 sample database.</p>
+        </td>
+        <td><a href="./Production.ProductModelProductDescriptionCulture.html">Production.ProductModelProductDescriptionCulture</a><span class="rc">
+																(762 rows)
+															</span><br><br><p class="td">Cross-reference table mapping product descriptions and the language the description is written in.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./dbo.DatabaseLog.html">dbo.DatabaseLog</a><span class="rc">
+														(1,597 rows)
+													</span><br><br><p class="td">Audit table tracking all DDL changes made to the AdventureWorks database. Data is captured by the database trigger ddlDatabaseTriggerLog.</p>
+        </td>
+        <td><a href="./Production.ProductPhoto.html">Production.ProductPhoto</a><span class="rc">
+																(101 rows)
+															</span><br><br><p class="td">Product images.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./dbo.ErrorLog.html">dbo.ErrorLog</a><span class="rc">
+														(0 rows)
+													</span><br><br><p class="td">Audit table tracking errors in the the AdventureWorks database that are caught by the CATCH block of a TRY...CATCH construct. Data is inserted by stored procedure dbo.uspLogError when it is executed from inside the CATCH block of a TRY...CATCH construct.</p>
+        </td>
+        <td><a href="./Production.ProductProductPhoto.html">Production.ProductProductPhoto</a><span class="rc">
+																(504 rows)
+															</span><br><br><p class="td">Cross-reference table mapping products and product photos.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./HumanResources.Department.html">HumanResources.Department</a><span class="rc">
+														(16 rows)
+													</span><br><br><p class="td">Lookup table containing the departments within the Adventure Works Cycles company.</p>
+        </td>
+        <td><a href="./Production.ProductReview.html">Production.ProductReview</a><span class="rc">
+																(4 rows)
+															</span><br><br><p class="td">Customer reviews of products they have purchased.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./HumanResources.Employee.html">HumanResources.Employee</a><span class="rc">
+														(290 rows)
+													</span><br><br><p class="td">Employee information such as salary, department, and title.</p>
+        </td>
+        <td><a href="./Production.ProductSubcategory.html">Production.ProductSubcategory</a><span class="rc">
+																(37 rows)
+															</span><br><br><p class="td">Product subcategories. See ProductCategory table.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./HumanResources.EmployeeDepartmentHistory.html">HumanResources.EmployeeDepartmentHistory</a><span class="rc">
+														(296 rows)
+													</span><br><br><p class="td">Employee department transfers.</p>
+        </td>
+        <td><a href="./Production.ScrapReason.html">Production.ScrapReason</a><span class="rc">
+																(16 rows)
+															</span><br><br><p class="td">Manufacturing failure reasons lookup table.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./HumanResources.EmployeePayHistory.html">HumanResources.EmployeePayHistory</a><span class="rc">
+														(316 rows)
+													</span><br><br><p class="td">Employee pay history.</p>
+        </td>
+        <td><a href="./Production.TransactionHistory.html">Production.TransactionHistory</a><span class="rc">
+																(113,443 rows)
+															</span><br><br><p class="td">Record of each purchase order, sales order, or work order transaction year to date.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./HumanResources.JobCandidate.html">HumanResources.JobCandidate</a><span class="rc">
+														(13 rows)
+													</span><br><br><p class="td">Résumés submitted to Human Resources by job applicants.</p>
+        </td>
+        <td><a href="./Production.TransactionHistoryArchive.html">Production.TransactionHistoryArchive</a><span class="rc">
+																(89,253 rows)
+															</span><br><br><p class="td">Transactions for previous years.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./HumanResources.Shift.html">HumanResources.Shift</a><span class="rc">
+														(3 rows)
+													</span><br><br><p class="td">Work shift lookup table.</p>
+        </td>
+        <td><a href="./Production.UnitMeasure.html">Production.UnitMeasure</a><span class="rc">
+																(38 rows)
+															</span><br><br><p class="td">Unit of measure lookup table.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.Address.html">Person.Address</a><span class="rc">
+														(19,614 rows)
+													</span><br><br><p class="td">Street address information for customers, employees, and vendors.</p>
+        </td>
+        <td><a href="./Production.WorkOrder.html">Production.WorkOrder</a><span class="rc">
+																(72,591 rows)
+															</span><br><br><p class="td">Manufacturing work orders.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.AddressType.html">Person.AddressType</a><span class="rc">
+														(6 rows)
+													</span><br><br><p class="td">Types of addresses stored in the Address table.</p>
+        </td>
+        <td><a href="./Production.WorkOrderRouting.html">Production.WorkOrderRouting</a><span class="rc">
+																(67,131 rows)
+															</span><br><br><p class="td">Work order details.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.BusinessEntity.html">Person.BusinessEntity</a><span class="rc">
+														(20,777 rows)
+													</span><br><br><p class="td">Source of the ID that connects vendors, customers, and employees with address and contact information.</p>
+        </td>
+        <td><a href="./Purchasing.ProductVendor.html">Purchasing.ProductVendor</a><span class="rc">
+																(460 rows)
+															</span><br><br><p class="td">Cross-reference table mapping vendors with the products they supply.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.BusinessEntityAddress.html">Person.BusinessEntityAddress</a><span class="rc">
+														(19,614 rows)
+													</span><br><br><p class="td">Cross-reference table mapping customers, vendors, and employees to their addresses.</p>
+        </td>
+        <td><a href="./Purchasing.PurchaseOrderDetail.html">Purchasing.PurchaseOrderDetail</a><span class="rc">
+																(8,845 rows)
+															</span><br><br><p class="td">Individual products associated with a specific purchase order. See PurchaseOrderHeader.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.BusinessEntityContact.html">Person.BusinessEntityContact</a><span class="rc">
+														(909 rows)
+													</span><br><br><p class="td">Cross-reference table mapping stores, vendors, and employees to people</p>
+        </td>
+        <td><a href="./Purchasing.PurchaseOrderHeader.html">Purchasing.PurchaseOrderHeader</a><span class="rc">
+																(4,012 rows)
+															</span><br><br><p class="td">General purchase order information. See PurchaseOrderDetail.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.ContactType.html">Person.ContactType</a><span class="rc">
+														(20 rows)
+													</span><br><br><p class="td">Lookup table containing the types of business entity contacts.</p>
+        </td>
+        <td><a href="./Purchasing.ShipMethod.html">Purchasing.ShipMethod</a><span class="rc">
+																(5 rows)
+															</span><br><br><p class="td">Shipping company lookup table.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.CountryRegion.html">Person.CountryRegion</a><span class="rc">
+														(238 rows)
+													</span><br><br><p class="td">Lookup table containing the ISO standard codes for countries and regions.</p>
+        </td>
+        <td><a href="./Purchasing.Vendor.html">Purchasing.Vendor</a><span class="rc">
+																(104 rows)
+															</span><br><br><p class="td">Companies from whom Adventure Works Cycles purchases parts or other goods.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.EmailAddress.html">Person.EmailAddress</a><span class="rc">
+														(19,972 rows)
+													</span><br><br><p class="td">Where to send a person email.</p>
+        </td>
+        <td><a href="./Sales.CountryRegionCurrency.html">Sales.CountryRegionCurrency</a><span class="rc">
+																(109 rows)
+															</span><br><br><p class="td">Cross-reference table mapping ISO currency codes to a country or region.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.Password.html">Person.Password</a><span class="rc">
+														(19,972 rows)
+													</span><br><br><p class="td">One way hashed authentication information</p>
+        </td>
+        <td><a href="./Sales.CreditCard.html">Sales.CreditCard</a><span class="rc">
+																(19,118 rows)
+															</span><br><br><p class="td">Customer credit card information.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.Person.html">Person.Person</a><span class="rc">
+														(19,972 rows)
+													</span><br><br><p class="td">Human beings involved with AdventureWorks: employees, customer contacts, and vendor contacts.</p>
+        </td>
+        <td><a href="./Sales.Currency.html">Sales.Currency</a><span class="rc">
+																(105 rows)
+															</span><br><br><p class="td">Lookup table containing standard ISO currencies.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.PersonPhone.html">Person.PersonPhone</a><span class="rc">
+														(19,972 rows)
+													</span><br><br><p class="td">Telephone number and type of a person.</p>
+        </td>
+        <td><a href="./Sales.CurrencyRate.html">Sales.CurrencyRate</a><span class="rc">
+																(13,532 rows)
+															</span><br><br><p class="td">Currency exchange rates.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.PhoneNumberType.html">Person.PhoneNumberType</a><span class="rc">
+														(3 rows)
+													</span><br><br><p class="td">Type of phone number of a person.</p>
+        </td>
+        <td><a href="./Sales.Customer.html">Sales.Customer</a><span class="rc">
+																(19,820 rows)
+															</span><br><br><p class="td">Current customer information. Also see the Person and Store tables.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.StateProvince.html">Person.StateProvince</a><span class="rc">
+														(181 rows)
+													</span><br><br><p class="td">State and province lookup table.</p>
+        </td>
+        <td><a href="./Sales.PersonCreditCard.html">Sales.PersonCreditCard</a><span class="rc">
+																(19,118 rows)
+															</span><br><br><p class="td">Cross-reference table mapping people to their credit card information in the CreditCard table.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.BillOfMaterials.html">Production.BillOfMaterials</a><span class="rc">
+														(2,679 rows)
+													</span><br><br><p class="td">Items required to make bicycles and bicycle subassemblies. It identifies the heirarchical relationship between a parent product and its components.</p>
+        </td>
+        <td><a href="./Sales.SalesOrderDetail.html">Sales.SalesOrderDetail</a><span class="rc">
+																(121,317 rows)
+															</span><br><br><p class="td">Individual products associated with a specific sales order. See SalesOrderHeader.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.Culture.html">Production.Culture</a><span class="rc">
+														(8 rows)
+													</span><br><br><p class="td">Lookup table containing the languages in which some AdventureWorks data is stored.</p>
+        </td>
+        <td><a href="./Sales.SalesOrderHeader.html">Sales.SalesOrderHeader</a><span class="rc">
+																(31,465 rows)
+															</span><br><br><p class="td">General sales order information.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.Document.html">Production.Document</a><span class="rc">
+														(13 rows)
+													</span><br><br><p class="td">Product maintenance documents.</p>
+        </td>
+        <td><a href="./Sales.SalesOrderHeaderSalesReason.html">Sales.SalesOrderHeaderSalesReason</a><span class="rc">
+																(27,647 rows)
+															</span><br><br><p class="td">Cross-reference table mapping sales orders to sales reason codes.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.Illustration.html">Production.Illustration</a><span class="rc">
+														(5 rows)
+													</span><br><br><p class="td">Bicycle assembly diagrams.</p>
+        </td>
+        <td><a href="./Sales.SalesPerson.html">Sales.SalesPerson</a><span class="rc">
+																(17 rows)
+															</span><br><br><p class="td">Sales representative current information.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.Location.html">Production.Location</a><span class="rc">
+														(14 rows)
+													</span><br><br><p class="td">Product inventory and manufacturing locations.</p>
+        </td>
+        <td><a href="./Sales.SalesPersonQuotaHistory.html">Sales.SalesPersonQuotaHistory</a><span class="rc">
+																(163 rows)
+															</span><br><br><p class="td">Sales performance tracking.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.Product.html">Production.Product</a><span class="rc">
+														(504 rows)
+													</span><br><br><p class="td">Products sold or used in the manfacturing of sold products.</p>
+        </td>
+        <td><a href="./Sales.SalesReason.html">Sales.SalesReason</a><span class="rc">
+																(10 rows)
+															</span><br><br><p class="td">Lookup table of customer purchase reasons.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.ProductCategory.html">Production.ProductCategory</a><span class="rc">
+														(4 rows)
+													</span><br><br><p class="td">High-level product categorization.</p>
+        </td>
+        <td><a href="./Sales.SalesTaxRate.html">Sales.SalesTaxRate</a><span class="rc">
+																(29 rows)
+															</span><br><br><p class="td">Tax rate lookup table.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.ProductCostHistory.html">Production.ProductCostHistory</a><span class="rc">
+														(395 rows)
+													</span><br><br><p class="td">Changes in the cost of a product over time.</p>
+        </td>
+        <td><a href="./Sales.SalesTerritory.html">Sales.SalesTerritory</a><span class="rc">
+																(10 rows)
+															</span><br><br><p class="td">Sales territory lookup table.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.ProductDescription.html">Production.ProductDescription</a><span class="rc">
+														(762 rows)
+													</span><br><br><p class="td">Product descriptions in several languages.</p>
+        </td>
+        <td><a href="./Sales.SalesTerritoryHistory.html">Sales.SalesTerritoryHistory</a><span class="rc">
+																(17 rows)
+															</span><br><br><p class="td">Sales representative transfers to other sales territories.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.ProductDocument.html">Production.ProductDocument</a><span class="rc">
+														(32 rows)
+													</span><br><br><p class="td">Cross-reference table mapping products to related product documents.</p>
+        </td>
+        <td><a href="./Sales.ShoppingCartItem.html">Sales.ShoppingCartItem</a><span class="rc">
+																(3 rows)
+															</span><br><br><p class="td">Contains online customer orders until the order is submitted or cancelled.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.ProductInventory.html">Production.ProductInventory</a><span class="rc">
+														(1,069 rows)
+													</span><br><br><p class="td">Product inventory information.</p>
+        </td>
+        <td><a href="./Sales.SpecialOffer.html">Sales.SpecialOffer</a><span class="rc">
+																(16 rows)
+															</span><br><br><p class="td">Sale discounts lookup table.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.ProductListPriceHistory.html">Production.ProductListPriceHistory</a><span class="rc">
+														(395 rows)
+													</span><br><br><p class="td">Changes in the list price of a product over time.</p>
+        </td>
+        <td><a href="./Sales.SpecialOfferProduct.html">Sales.SpecialOfferProduct</a><span class="rc">
+																(538 rows)
+															</span><br><br><p class="td">Cross-reference table mapping products to special offer discounts.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.ProductModel.html">Production.ProductModel</a><span class="rc">
+														(128 rows)
+													</span><br><br><p class="td">Product model classification.</p>
+        </td>
+        <td><a href="./Sales.Store.html">Sales.Store</a><span class="rc">
+																(701 rows)
+															</span><br><br><p class="td">Customers (resellers) of Adventure Works products.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.ProductModelIllustration.html">Production.ProductModelIllustration</a><span class="rc">
+														(7 rows)
+													</span><br><br><p class="td">Cross-reference table mapping product models and illustrations.</p>
+        </td>
+        <td> </td>
+      </tr>
+    </table><br><h2>Views:</h2><br><table class="mc">
+      <tr>
+        <td><a href="./HumanResources.vEmployee.html">HumanResources.vEmployee</a><br><br><p class="td">Employee names and addresses.</p>
+        </td>
+        <td><a href="./Production.vProductModelInstructions.html">Production.vProductModelInstructions</a><br><br><p class="td">Displays the content from each element in the xml column Instructions for each product in the Production.ProductModel table that has manufacturing instructions.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./HumanResources.vEmployeeDepartment.html">HumanResources.vEmployeeDepartment</a><br><br><p class="td">Returns employee name, title, and current department.</p>
+        </td>
+        <td><a href="./Purchasing.vVendorWithAddresses.html">Purchasing.vVendorWithAddresses</a><br><br><p class="td">Vendor (company) names and addresses .</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./HumanResources.vEmployeeDepartmentHistory.html">HumanResources.vEmployeeDepartmentHistory</a><br><br><p class="td">Returns employee name and current and previous departments.</p>
+        </td>
+        <td><a href="./Purchasing.vVendorWithContacts.html">Purchasing.vVendorWithContacts</a><br><br><p class="td">Vendor (company) names  and the names of vendor employees to contact.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./HumanResources.vJobCandidate.html">HumanResources.vJobCandidate</a><br><br><p class="td">Job candidate names and resumes.</p>
+        </td>
+        <td><a href="./Sales.vIndividualCustomer.html">Sales.vIndividualCustomer</a><br><br><p class="td">Individual customers (names and addresses) that purchase Adventure Works Cycles products online.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./HumanResources.vJobCandidateEducation.html">HumanResources.vJobCandidateEducation</a><br><br><p class="td">Displays the content from each education related element in the xml column Resume in the HumanResources.JobCandidate table. The content has been localized into French, Simplified Chinese and Thai. Some data may not display correctly unless supplemental language support is installed.</p>
+        </td>
+        <td><a href="./Sales.vPersonDemographics.html">Sales.vPersonDemographics</a><br><br><p class="td">Displays the content from each element in the xml column Demographics for each customer in the Person.Person table.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./HumanResources.vJobCandidateEmployment.html">HumanResources.vJobCandidateEmployment</a><br><br><p class="td">Displays the content from each employement history related element in the xml column Resume in the HumanResources.JobCandidate table. The content has been localized into French, Simplified Chinese and Thai. Some data may not display correctly unless supplemental language support is installed.</p>
+        </td>
+        <td><a href="./Sales.vSalesPerson.html">Sales.vSalesPerson</a><br><br><p class="td">Sales representiatives (names and addresses) and their sales-related information.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.vAdditionalContactInfo.html">Person.vAdditionalContactInfo</a><br><br><p class="td">Displays the contact name and content from each element in the xml column AdditionalContactInfo for that person.</p>
+        </td>
+        <td><a href="./Sales.vSalesPersonSalesByFiscalYears.html">Sales.vSalesPersonSalesByFiscalYears</a><br><br><p class="td">Uses PIVOT to return aggregated sales information for each sales representative.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Person.vStateProvinceCountryRegion.html">Person.vStateProvinceCountryRegion</a><br><br><p class="td">Joins StateProvince table with CountryRegion table.</p>
+        </td>
+        <td><a href="./Sales.vStoreWithAddresses.html">Sales.vStoreWithAddresses</a><br><br><p class="td">Stores (including store addresses) that sell Adventure Works Cycles products to consumers.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.vProductAndDescription.html">Production.vProductAndDescription</a><br><br><p class="td">Product names and descriptions. Product descriptions are provided in multiple languages.</p>
+        </td>
+        <td><a href="./Sales.vStoreWithContacts.html">Sales.vStoreWithContacts</a><br><br><p class="td">Stores (including store contacts) that sell Adventure Works Cycles products to consumers.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./Production.vProductModelCatalogDescription.html">Production.vProductModelCatalogDescription</a><br><br><p class="td">Displays the content from each element in the xml column CatalogDescription for each product in the Production.ProductModel table that has catalog data.</p>
+        </td>
+        <td><a href="./Sales.vStoreWithDemographics.html">Sales.vStoreWithDemographics</a><br><br><p class="td">Stores (including demographics) that sell Adventure Works Cycles products to consumers.</p>
+        </td>
+      </tr>
+    </table><br><h2>Procedures:</h2><br><table class="mc">
+      <tr>
+        <td><a href="./dbo.uspGetBillOfMaterials.html">dbo.uspGetBillOfMaterials</a><br><br><p class="td">Stored procedure using a recursive query to return a multi-level bill of material for the specified ProductID.</p>
+        </td>
+        <td><a href="./dbo.uspPrintError.html">dbo.uspPrintError</a><br><br><p class="td">Prints error information about the error that caused execution to jump to the CATCH block of a TRY...CATCH construct. Should be executed from within the scope of a CATCH block otherwise it will return without printing any error information.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./dbo.uspGetEmployeeManagers.html">dbo.uspGetEmployeeManagers</a><br><br><p class="td">Stored procedure using a recursive query to return the direct and indirect managers of the specified employee.</p>
+        </td>
+        <td><a href="./dbo.uspSearchCandidateResumes.html">dbo.uspSearchCandidateResumes</a></td>
+      </tr>
+      <tr>
+        <td><a href="./dbo.uspGetManagerEmployees.html">dbo.uspGetManagerEmployees</a><br><br><p class="td">Stored procedure using a recursive query to return the direct and indirect employees of the specified manager.</p>
+        </td>
+        <td><a href="./HumanResources.uspUpdateEmployeeHireInfo.html">HumanResources.uspUpdateEmployeeHireInfo</a><br><br><p class="td">Updates the Employee table and inserts a new row in the EmployeePayHistory table with the values specified in the input parameters.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./dbo.uspGetWhereUsedProductID.html">dbo.uspGetWhereUsedProductID</a><br><br><p class="td">Stored procedure using a recursive query to return all components or assemblies that directly or indirectly use the specified ProductID.</p>
+        </td>
+        <td><a href="./HumanResources.uspUpdateEmployeeLogin.html">HumanResources.uspUpdateEmployeeLogin</a><br><br><p class="td">Updates the Employee table with the values specified in the input parameters for the given BusinessEntityID.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./dbo.uspLogError.html">dbo.uspLogError</a><br><br><p class="td">Logs error information in the ErrorLog table about the error that caused execution to jump to the CATCH block of a TRY...CATCH construct. Should be executed from within the scope of a CATCH block otherwise it will return without inserting error information.</p>
+        </td>
+        <td><a href="./HumanResources.uspUpdateEmployeePersonalInfo.html">HumanResources.uspUpdateEmployeePersonalInfo</a><br><br><p class="td">Updates the Employee table with the values specified in the input parameters for the given EmployeeID.</p>
+        </td>
+      </tr>
+    </table><br><h2>Functions:</h2><br><table class="mc">
+      <tr>
+        <td><a href="./dbo.ufnGetAccountingEndDate.html">dbo.ufnGetAccountingEndDate</a><br><br><p class="td">Scalar function used in the uSalesOrderHeader trigger to set the starting account date.</p>
+        </td>
+        <td><a href="./dbo.ufnGetProductStandardCost.html">dbo.ufnGetProductStandardCost</a><br><br><p class="td">Scalar function returning the standard cost for a given product on a particular order date.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./dbo.ufnGetAccountingStartDate.html">dbo.ufnGetAccountingStartDate</a><br><br><p class="td">Scalar function used in the uSalesOrderHeader trigger to set the ending account date.</p>
+        </td>
+        <td><a href="./dbo.ufnGetPurchaseOrderStatusText.html">dbo.ufnGetPurchaseOrderStatusText</a><br><br><p class="td">Scalar function returning the text representation of the Status column in the PurchaseOrderHeader table.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./dbo.ufnGetContactInformation.html">dbo.ufnGetContactInformation</a><br><br><p class="td">Table value function returning the first name, last name, job title and contact type for a given contact.</p>
+        </td>
+        <td><a href="./dbo.ufnGetSalesOrderStatusText.html">dbo.ufnGetSalesOrderStatusText</a><br><br><p class="td">Scalar function returning the text representation of the Status column in the SalesOrderHeader table.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./dbo.ufnGetDocumentStatusText.html">dbo.ufnGetDocumentStatusText</a><br><br><p class="td">Scalar function returning the text representation of the Status column in the Document table.</p>
+        </td>
+        <td><a href="./dbo.ufnGetStock.html">dbo.ufnGetStock</a><br><br><p class="td">Scalar function returning the quantity of inventory in LocationID 6 (Miscellaneous Storage)for a specified ProductID.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./dbo.ufnGetProductDealerPrice.html">dbo.ufnGetProductDealerPrice</a><br><br><p class="td">Scalar function returning the dealer price for a given product on a particular order date.</p>
+        </td>
+        <td><a href="./dbo.ufnLeadingZeros.html">dbo.ufnLeadingZeros</a><br><br><p class="td">Scalar function used by the Sales.Customer table to help set the account number.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="./dbo.ufnGetProductListPrice.html">dbo.ufnGetProductListPrice</a><br><br><p class="td">Scalar function returning the list price for a given product on a particular order date.</p>
+        </td>
+        <td> </td>
+      </tr>
+    </table><br></body>
+</html>

@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sales.SalesReason</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Sales.SalesReason">Sales.SalesReason</a></span><span class="rc">
+									(10 rows)
+								</span></h3><br><p class="td">Lookup table of customer purchase reasons.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>SalesReasonID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir">X</td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key for SalesReason records.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Name</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Sales reason description.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ReasonType</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Category the sales reason belongs to.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_SalesReason_SalesReasonID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>SalesReasonID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Sales.SalesOrderHeaderSalesReason.html">Sales.SalesOrderHeaderSalesReason</a></h5><br><br><ul class="rl">
+          <li>SalesReasonID</li>
+        </ul>
+      </li><br></ul>
+  </body>
+</html>

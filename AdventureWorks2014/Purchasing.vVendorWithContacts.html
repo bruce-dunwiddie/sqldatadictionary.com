@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Purchasing.vVendorWithContacts</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						View <a id="Purchasing.vVendorWithContacts">Purchasing.vVendorWithContacts</a></span></h3><br><p class="td">Vendor (company) names  and the names of vendor employees to contact.</p><br><table class="v b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td class="cr"><span>BusinessEntityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Name</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>ContactType</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Title</span></td>
+        <td class="tr"><span>nvarchar(8)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>FirstName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>MiddleName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>LastName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Suffix</span></td>
+        <td class="tr"><span>nvarchar(10)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>PhoneNumber</span></td>
+        <td class="tr"><span>Phone(nvarchar(25))</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>PhoneNumberType</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>EmailAddress</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>EmailPromotion</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="nr"></td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./Person.BusinessEntityContact.html">Person.BusinessEntityContact</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>ContactTypeID</li>
+          <li>PersonID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.ContactType.html">Person.ContactType</a></h5><br><br><ul class="rl">
+          <li>ContactTypeID</li>
+          <li>Name</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.EmailAddress.html">Person.EmailAddress</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>EmailAddress</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.Person.html">Person.Person</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>EmailPromotion</li>
+          <li>FirstName</li>
+          <li>LastName</li>
+          <li>MiddleName</li>
+          <li>Suffix</li>
+          <li>Title</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.PersonPhone.html">Person.PersonPhone</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>PhoneNumber</li>
+          <li>PhoneNumberTypeID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.PhoneNumberType.html">Person.PhoneNumberType</a></h5><br><br><ul class="rl">
+          <li>Name</li>
+          <li>PhoneNumberTypeID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Purchasing.Vendor.html">Purchasing.Vendor</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>Name</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

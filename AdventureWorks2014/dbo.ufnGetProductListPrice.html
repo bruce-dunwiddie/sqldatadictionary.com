@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>dbo.ufnGetProductListPrice</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+								Scalar
+							
+						Function <a id="dbo.ufnGetProductListPrice">dbo.ufnGetProductListPrice</a></span></h3><br><p class="td">Scalar function returning the list price for a given product on a particular order date.</p><br><table class="f b">
+      <tr class="h">
+        <th>Parameter</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td><span>@ProductID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="3">Input parameter for the scalar function ufnGetProductListPrice. Enter a valid ProductID from the Production.Product table.</td>
+      </tr>
+      <tr>
+        <td><span>@OrderDate</span></td>
+        <td class="s"><span>datetime</span></td>
+        <td class="s"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="3">Input parameter for the scalar function ufnGetProductListPrice. Enter a valid order date.</td>
+      </tr>
+    </table><br><h4>Result:</h4><br><table class="b s">
+      <tr class="h">
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td class="s"><span>money</span></td>
+        <td class="s c">X</td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./Production.Product.html">Production.Product</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Production.ProductListPriceHistory.html">Production.ProductListPriceHistory</a></h5><br><br><ul class="rl">
+          <li>EndDate</li>
+          <li>ListPrice</li>
+          <li>ProductID</li>
+          <li>StartDate</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Warehouse.StockGroups</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Warehouse.StockGroups">Warehouse.StockGroups</a></span><span class="rc">
+									(10 rows)
+								</span></h3><br><p class="td">Groups for categorizing stock items (ie: novelties, toys, edible novelties, etc.)</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>StockGroupID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[StockGroupID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used for reference to a stock group within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>StockGroupName</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Full name of groups used to categorize stock items</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidFrom</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidTo</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Warehouse_StockGroups</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(10% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>StockGroupID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>UQ_Warehouse_StockGroups_StockGroupName</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+          <li>
+													(10% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>StockGroupName</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Sales.SpecialDeals.html">Sales.SpecialDeals</a></h5><br><br><ul class="rl">
+          <li>StockGroupID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItemStockGroups.html">Warehouse.StockItemStockGroups</a></h5><br><br><ul class="rl">
+          <li>StockGroupID</li>
+        </ul>
+      </li><br></ul>
+  </body>
+</html>

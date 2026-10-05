@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Production.UnitMeasure</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Production.UnitMeasure">Production.UnitMeasure</a></span><span class="rc">
+									(38 rows)
+								</span></h3><br><p class="td">Unit of measure lookup table.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>UnitMeasureCode</span></td>
+        <td class="tr"><span>nchar(3)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>Name</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Unit of measure description.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_UnitMeasure_UnitMeasureCode</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>UnitMeasureCode</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_UnitMeasure_Name</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index.</p><br><ul class="il">
+          <li>Name</li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Production.BillOfMaterials.html">Production.BillOfMaterials</a></h5><br><br><ul class="rl">
+          <li>UnitMeasureCode</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.Product.html">Production.Product</a></h5><br><br><ul class="rl">
+          <li>SizeUnitMeasureCode<span class="rlc">
+													(UnitMeasureCode)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.Product.html">Production.Product</a></h5><br><br><ul class="rl">
+          <li>WeightUnitMeasureCode<span class="rlc">
+													(UnitMeasureCode)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.ProductVendor.html">Purchasing.ProductVendor</a></h5><br><br><ul class="rl">
+          <li>UnitMeasureCode</li>
+        </ul>
+      </li><br></ul>
+  </body>
+</html>

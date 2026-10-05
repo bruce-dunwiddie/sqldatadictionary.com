@@ -1,0 +1,165 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Production.ProductModel</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Production.ProductModel">Production.ProductModel</a></span><span class="rc">
+									(128 rows)
+								</span></h3><br><p class="td">Product model classification.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>ProductModelID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir">X</td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key for ProductModel records.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>Name</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Product model description.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>CatalogDescription</span></td>
+        <td class="tr"><span>xml</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Detailed product catalog information in xml format.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Instructions</span></td>
+        <td class="tr"><span>xml</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Manufacturing instructions in xml format.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>rowguid</span></td>
+        <td class="tr"><span>uniqueidentifier</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>newid()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_ProductModel_ProductModelID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>ProductModelID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_ProductModel_Name</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index.</p><br><ul class="il">
+          <li>Name</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_ProductModel_rowguid</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index. Used to support replication samples.</p><br><ul class="il">
+          <li>rowguid</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>PXML_ProductModel_CatalogDescription</h5>
+        <ul class="io">
+          <li>(XML)</li>
+        </ul><br><br><p class="id">Primary XML index.</p><br><ul class="il">
+          <li>CatalogDescription</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>PXML_ProductModel_Instructions</h5>
+        <ul class="io">
+          <li>(XML)</li>
+        </ul><br><br><p class="id">Primary XML index.</p><br><ul class="il">
+          <li>Instructions</li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Production.Product.html">Production.Product</a></h5><br><br><ul class="rl">
+          <li>ProductModelID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.ProductModelIllustration.html">Production.ProductModelIllustration</a></h5><br><br><ul class="rl">
+          <li>ProductModelID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.ProductModelProductDescriptionCulture.html">Production.ProductModelProductDescriptionCulture</a></h5><br><br><ul class="rl">
+          <li>ProductModelID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">View <h5><a href="./Production.vProductAndDescription.html">Production.vProductAndDescription</a></h5><br><br><ul class="rl">
+          <li>Name</li>
+          <li>ProductModelID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Production.vProductModelCatalogDescription.html">Production.vProductModelCatalogDescription</a></h5><br><br><ul class="rl">
+          <li>CatalogDescription</li>
+          <li>ModifiedDate</li>
+          <li>Name</li>
+          <li>ProductModelID</li>
+          <li>rowguid</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Production.vProductModelInstructions.html">Production.vProductModelInstructions</a></h5><br><br><ul class="rl">
+          <li>Instructions</li>
+          <li>ModifiedDate</li>
+          <li>Name</li>
+          <li>ProductModelID</li>
+          <li>rowguid</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

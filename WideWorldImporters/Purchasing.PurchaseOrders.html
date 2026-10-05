@@ -1,0 +1,235 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Purchasing.PurchaseOrders</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Purchasing.PurchaseOrders">Purchasing.PurchaseOrders</a></span><span class="rc">
+									(2,074 rows)
+								</span></h3><br><p class="td">Details of supplier purchase orders</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>PurchaseOrderID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[PurchaseOrderID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used for reference to a purchase order within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>SupplierID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Supplier for this purchase order</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>OrderDate</span></td>
+        <td class="tr"><span>date</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date that this purchase order was raised</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>DeliveryMethodID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">How this purchase order should be delivered</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>ContactPersonID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">The person who is the primary contact for this purchase order</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ExpectedDeliveryDate</span></td>
+        <td class="tr"><span>date</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Expected delivery date for this purchase order</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SupplierReference</span></td>
+        <td class="tr"><span>nvarchar(20)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Supplier reference for our organization (might be our account number at the supplier)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>IsOrderFinalized</span></td>
+        <td class="tr"><span>bit</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Is this purchase order now considered finalized?</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Comments</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Any comments related this purchase order (comments sent to the supplier)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>InternalComments</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Any internal comments related this purchase order (comments for internal reference only and not sent to the supplier)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LastEditedWhen</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>sysdatetime()</span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Purchasing_PurchaseOrders</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(0.05% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>PurchaseOrderID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Purchasing_PurchaseOrders_ContactPersonID</h5>
+        <ul class="io">
+          <li>
+													(100% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>ContactPersonID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Purchasing_PurchaseOrders_DeliveryMethodID</h5>
+        <ul class="io">
+          <li>
+													(20% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>DeliveryMethodID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Purchasing_PurchaseOrders_SupplierID</h5>
+        <ul class="io">
+          <li>
+													(14.29% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>SupplierID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.DeliveryMethods.html">Application.DeliveryMethods</a></h5><br><br><ul class="rl">
+          <li>DeliveryMethodID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(ContactPersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.Suppliers.html">Purchasing.Suppliers</a></h5><br><br><ul class="rl">
+          <li>SupplierID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Purchasing.PurchaseOrderLines.html">Purchasing.PurchaseOrderLines</a></h5><br><br><ul class="rl">
+          <li>PurchaseOrderID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.SupplierTransactions.html">Purchasing.SupplierTransactions</a></h5><br><br><ul class="rl">
+          <li>PurchaseOrderID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItemTransactions.html">Warehouse.StockItemTransactions</a></h5><br><br><ul class="rl">
+          <li>PurchaseOrderID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./Integration.GetPurchaseUpdates.html">Integration.GetPurchaseUpdates</a></h5><br><br><ul class="rl">
+          <li>LastEditedWhen</li>
+          <li>OrderDate</li>
+          <li>PurchaseOrderID</li>
+          <li>SupplierID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

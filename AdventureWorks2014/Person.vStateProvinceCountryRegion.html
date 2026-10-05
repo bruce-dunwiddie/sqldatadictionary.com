@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Person.vStateProvinceCountryRegion</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						View <a id="Person.vStateProvinceCountryRegion">Person.vStateProvinceCountryRegion</a></span></h3><br><p class="td">Joins StateProvince table with CountryRegion table.</p><br><table class="v b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td class="cr"><span>StateProvinceID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>StateProvinceCode</span></td>
+        <td class="tr"><span>nchar(3)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>IsOnlyStateProvinceFlag</span></td>
+        <td class="tr"><span>Flag(bit)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>StateProvinceName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>TerritoryID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>CountryRegionCode</span></td>
+        <td class="tr"><span>nvarchar(3)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>CountryRegionName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./Person.CountryRegion.html">Person.CountryRegion</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+          <li>Name</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.StateProvince.html">Person.StateProvince</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+          <li>IsOnlyStateProvinceFlag</li>
+          <li>Name</li>
+          <li>StateProvinceCode</li>
+          <li>StateProvinceID</li>
+          <li>TerritoryID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

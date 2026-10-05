@@ -1,0 +1,416 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sales.SalesOrderHeader</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Sales.SalesOrderHeader">Sales.SalesOrderHeader</a></span><span class="rc">
+									(31,465 rows)
+								</span></h3><br><p class="td">General sales order information.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>SalesOrderID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir">X</td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>RevisionNumber</span></td>
+        <td class="tr"><span>tinyint</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Incremental number to track changes to the sales order over time.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>OrderDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Dates the sales order was created.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DueDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date the order is due to the customer.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ShipDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date the order was shipped to the customer.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Status</span></td>
+        <td class="tr"><span>tinyint</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>1</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Order current status. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>OnlineOrderFlag</span></td>
+        <td class="tr"><span>Flag(bit)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>1</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">0 = Order placed by sales person. 1 = Order placed online by customer.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>SalesOrderNumber</span></td>
+        <td class="tr"><span>nvarchar(25)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Unique sales order identification number.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>PurchaseOrderNumber</span></td>
+        <td class="tr"><span>OrderNumber(nvarchar(25))</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Customer purchase order number reference.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>AccountNumber</span></td>
+        <td class="tr"><span>AccountNumber(nvarchar(15))</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Financial accounting number reference.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>CustomerID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Customer identification number. Foreign key to Customer.BusinessEntityID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>SalesPersonID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Sales person who created the sales order. Foreign key to SalesPerson.BusinessEntityID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>TerritoryID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Territory in which the sale was made. Foreign key to SalesTerritory.SalesTerritoryID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>BillToAddressID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Customer billing address. Foreign key to Address.AddressID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>ShipToAddressID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Customer shipping address. Foreign key to Address.AddressID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>ShipMethodID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Shipping method. Foreign key to ShipMethod.ShipMethodID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>CreditCardID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Credit card identification number. Foreign key to CreditCard.CreditCardID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>CreditCardApprovalCode</span></td>
+        <td class="tr"><span>varchar(15)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Approval code provided by the credit card company.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>CurrencyRateID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Currency exchange rate used. Foreign key to CurrencyRate.CurrencyRateID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SubTotal</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0.00</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Sales subtotal. Computed as SUM(SalesOrderDetail.LineTotal)for the appropriate SalesOrderID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TaxAmt</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0.00</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Tax amount.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Freight</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0.00</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Shipping cost.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TotalDue</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Total due from customer. Computed as Subtotal + TaxAmt + Freight.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Comment</span></td>
+        <td class="tr"><span>nvarchar(128)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Sales representative comments.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>rowguid</span></td>
+        <td class="tr"><span>uniqueidentifier</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>newid()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_SalesOrderHeader_SalesOrderID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>SalesOrderID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_SalesOrderHeader_rowguid</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index. Used to support replication samples.</p><br><ul class="il">
+          <li>rowguid</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_SalesOrderHeader_SalesOrderNumber</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index.</p><br><ul class="il">
+          <li>SalesOrderNumber</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_SalesOrderHeader_CustomerID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_SalesOrderHeader_SalesPersonID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>SalesPersonID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Person.Address.html">Person.Address</a></h5><br><br><ul class="rl">
+          <li>AddressID<span class="rlc">
+													(BillToAddressID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Person.Address.html">Person.Address</a></h5><br><br><ul class="rl">
+          <li>AddressID<span class="rlc">
+													(ShipToAddressID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.ShipMethod.html">Purchasing.ShipMethod</a></h5><br><br><ul class="rl">
+          <li>ShipMethodID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.CreditCard.html">Sales.CreditCard</a></h5><br><br><ul class="rl">
+          <li>CreditCardID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.CurrencyRate.html">Sales.CurrencyRate</a></h5><br><br><ul class="rl">
+          <li>CurrencyRateID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Customer.html">Sales.Customer</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SalesPerson.html">Sales.SalesPerson</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID<span class="rlc">
+													(SalesPersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SalesTerritory.html">Sales.SalesTerritory</a></h5><br><br><ul class="rl">
+          <li>TerritoryID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Sales.SalesOrderDetail.html">Sales.SalesOrderDetail</a></h5><br><br><ul class="rl">
+          <li>SalesOrderID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SalesOrderHeaderSalesReason.html">Sales.SalesOrderHeaderSalesReason</a></h5><br><br><ul class="rl">
+          <li>SalesOrderID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Triggers:</h4><br><ul>
+      <li class="in">
+        <h5><a id="Sales.uSalesOrderHeader">uSalesOrderHeader</a></h5><span class="rlc">
+										(After
+									Update)</span><br><br><p class="id">AFTER UPDATE trigger that updates the RevisionNumber and ModifiedDate columns in the SalesOrderHeader table.Updates the SalesYTD column in the SalesPerson and SalesTerritory tables.</p><br></li>
+    </ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Trigger <h5><a href="./Sales.SalesOrderDetail.html#Sales.iduSalesOrderDetail">Sales.iduSalesOrderDetail</a>
+										on <a href="./Sales.SalesOrderDetail.html">Sales.SalesOrderDetail</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>SalesOrderID</li>
+          <li>SubTotal</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vSalesPersonSalesByFiscalYears.html">Sales.vSalesPersonSalesByFiscalYears</a></h5><br><br><ul class="rl">
+          <li>OrderDate</li>
+          <li>SalesPersonID</li>
+          <li>SubTotal</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

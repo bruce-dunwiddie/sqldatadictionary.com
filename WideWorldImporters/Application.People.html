@@ -1,0 +1,606 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Application.People</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Application.People">Application.People</a></span><span class="rc">
+									(1,111 rows)
+								</span></h3><br><p class="td">People known to the application (staff, customer contacts, supplier contacts)</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>PersonID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[PersonID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used for reference to a person within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>FullName</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Full name for this person</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>PreferredName</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Name that this person prefers to be called</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SearchName</span></td>
+        <td class="tr"><span>nvarchar(101)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Name to build full text search on (computed column)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>IsPermittedToLogon</span></td>
+        <td class="tr"><span>bit</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Is this person permitted to log on?</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LogonName</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Person's system logon name</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>IsExternalLogonProvider</span></td>
+        <td class="tr"><span>bit</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Is logon token provided by an external system?</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>HashedPassword</span></td>
+        <td class="tr"><span>varbinary(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Hash of password for users without external logon tokens</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>IsSystemUser</span></td>
+        <td class="tr"><span>bit</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Is the currently permitted to make online access?</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>IsEmployee</span></td>
+        <td class="tr"><span>bit</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Is this person an employee?</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>IsSalesperson</span></td>
+        <td class="tr"><span>bit</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Is this person a staff salesperson?</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>UserPreferences</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">User preferences related to the website (holds JSON data)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>PhoneNumber</span></td>
+        <td class="tr"><span>nvarchar(20)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Phone number</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>FaxNumber</span></td>
+        <td class="tr"><span>nvarchar(20)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Fax number</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>EmailAddress</span></td>
+        <td class="tr"><span>nvarchar(256)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Email address for this person</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Photo</span></td>
+        <td class="tr"><span>varbinary(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Photo of this person</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>CustomFields</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Custom fields for employees and salespeople</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>OtherLanguages</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Other languages spoken (computed column from custom fields)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidFrom</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidTo</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Application_People</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(0.09% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>PersonID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Application_People_FullName</h5>
+        <ul class="io">
+          <li>
+													(0.09% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Improves performance of name-related queries</p><br><ul class="il">
+          <li>FullName</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Application_People_IsEmployee</h5>
+        <ul class="io">
+          <li>
+													(50% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Allows quickly locating employees</p><br><ul class="il">
+          <li>IsEmployee</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Application_People_IsSalesperson</h5>
+        <ul class="io">
+          <li>
+													(50% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Allows quickly locating salespeople</p><br><ul class="il">
+          <li>IsSalesperson</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Application_People_Perf_20160301_05</h5>
+        <ul class="io">
+          <li>
+													(0.09% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Improves performance of order picking and invoicing</p><br><ul class="il">
+          <li>IsPermittedToLogon</li>
+          <li>PersonID</li>
+          <li>FullName<span class="ilo">
+												(Included)
+											</span></li>
+          <li>EmailAddress<span class="ilo">
+												(Included)
+											</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.Cities.html">Application.Cities</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.Countries.html">Application.Countries</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.DeliveryMethods.html">Application.DeliveryMethods</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.PaymentMethods.html">Application.PaymentMethods</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.StateProvinces.html">Application.StateProvinces</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.SystemParameters.html">Application.SystemParameters</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.TransactionTypes.html">Application.TransactionTypes</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.PurchaseOrderLines.html">Purchasing.PurchaseOrderLines</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.PurchaseOrders.html">Purchasing.PurchaseOrders</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.PurchaseOrders.html">Purchasing.PurchaseOrders</a></h5><br><br><ul class="rl">
+          <li>ContactPersonID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.SupplierCategories.html">Purchasing.SupplierCategories</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.Suppliers.html">Purchasing.Suppliers</a></h5><br><br><ul class="rl">
+          <li>AlternateContactPersonID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.Suppliers.html">Purchasing.Suppliers</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.Suppliers.html">Purchasing.Suppliers</a></h5><br><br><ul class="rl">
+          <li>PrimaryContactPersonID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.SupplierTransactions.html">Purchasing.SupplierTransactions</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.BuyingGroups.html">Sales.BuyingGroups</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.CustomerCategories.html">Sales.CustomerCategories</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>AlternateContactPersonID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>PrimaryContactPersonID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.CustomerTransactions.html">Sales.CustomerTransactions</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.InvoiceLines.html">Sales.InvoiceLines</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Invoices.html">Sales.Invoices</a></h5><br><br><ul class="rl">
+          <li>AccountsPersonID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Invoices.html">Sales.Invoices</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Invoices.html">Sales.Invoices</a></h5><br><br><ul class="rl">
+          <li>ContactPersonID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Invoices.html">Sales.Invoices</a></h5><br><br><ul class="rl">
+          <li>PackedByPersonID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Invoices.html">Sales.Invoices</a></h5><br><br><ul class="rl">
+          <li>SalespersonPersonID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.OrderLines.html">Sales.OrderLines</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Orders.html">Sales.Orders</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Orders.html">Sales.Orders</a></h5><br><br><ul class="rl">
+          <li>ContactPersonID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Orders.html">Sales.Orders</a></h5><br><br><ul class="rl">
+          <li>PickedByPersonID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Orders.html">Sales.Orders</a></h5><br><br><ul class="rl">
+          <li>SalespersonPersonID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SpecialDeals.html">Sales.SpecialDeals</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.Colors.html">Warehouse.Colors</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.PackageTypes.html">Warehouse.PackageTypes</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockGroups.html">Warehouse.StockGroups</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItemHoldings.html">Warehouse.StockItemHoldings</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItems.html">Warehouse.StockItems</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItemStockGroups.html">Warehouse.StockItemStockGroups</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItemTransactions.html">Warehouse.StockItemTransactions</a></h5><br><br><ul class="rl">
+          <li>LastEditedBy<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./Integration.GetEmployeeUpdates.html">Integration.GetEmployeeUpdates</a></h5><br><br><ul class="rl">
+          <li>IsEmployee</li>
+          <li>PersonID</li>
+          <li>ValidFrom</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.ActivateWebsiteLogon.html">Website.ActivateWebsiteLogon</a></h5><br><br><ul class="rl">
+          <li>FullName</li>
+          <li>HashedPassword</li>
+          <li>IsPermittedToLogon</li>
+          <li>LogonName</li>
+          <li>PersonID</li>
+          <li>UserPreferences</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.ChangePassword.html">Website.ChangePassword</a></h5><br><br><ul class="rl">
+          <li>FullName</li>
+          <li>HashedPassword</li>
+          <li>IsPermittedToLogon</li>
+          <li>PersonID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.SearchForCustomers.html">Website.SearchForCustomers</a></h5><br><br><ul class="rl">
+          <li>FullName</li>
+          <li>PersonID</li>
+          <li>PreferredName</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.SearchForPeople.html">Website.SearchForPeople</a></h5><br><br><ul class="rl">
+          <li>FullName</li>
+          <li>IsEmployee</li>
+          <li>IsSalesperson</li>
+          <li>PersonID</li>
+          <li>PreferredName</li>
+          <li>SearchName</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.SearchForSuppliers.html">Website.SearchForSuppliers</a></h5><br><br><ul class="rl">
+          <li>FullName</li>
+          <li>PersonID</li>
+          <li>PreferredName</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Website.Customers.html">Website.Customers</a></h5><br><br><ul class="rl">
+          <li>FullName</li>
+          <li>PersonID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Website.Suppliers.html">Website.Suppliers</a></h5><br><br><ul class="rl">
+          <li>FullName</li>
+          <li>PersonID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

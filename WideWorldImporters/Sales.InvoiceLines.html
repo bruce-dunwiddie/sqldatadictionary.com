@@ -1,0 +1,265 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sales.InvoiceLines</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Sales.InvoiceLines">Sales.InvoiceLines</a></span><span class="rc">
+									(228,265 rows)
+								</span></h3><br><p class="td">Detail lines from customer invoices</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>InvoiceLineID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[InvoiceLineID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used for reference to a line on an invoice within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>InvoiceID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Invoice that this line is associated with</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>StockItemID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Stock item for this invoice line</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Description</span></td>
+        <td class="tr"><span>nvarchar(100)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Description of the item supplied (Usually the stock item name but can be overridden)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>PackageTypeID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Type of package supplied</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Quantity</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Quantity supplied</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>UnitPrice</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Unit price charged</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TaxRate</span></td>
+        <td class="tr"><span>decimal(18,3)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Tax rate to be applied</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TaxAmount</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Tax amount calculated</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LineProfit</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Profit made on this line item at current cost price</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ExtendedPrice</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Extended line price charged</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LastEditedWhen</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>sysdatetime()</span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Sales_InvoiceLines</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(&lt; 0.01% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>InvoiceLineID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>NCCX_Sales_InvoiceLines</h5>
+        <ul class="io">
+          <li>(Columnstore)</li>
+        </ul><br><br><ul class="il">
+          <li>InvoiceID</li>
+          <li>StockItemID</li>
+          <li>Quantity</li>
+          <li>UnitPrice</li>
+          <li>LineProfit</li>
+          <li>LastEditedWhen</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_InvoiceLines_InvoiceID</h5>
+        <ul class="io">
+          <li>
+													(&lt; 0.01% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>InvoiceID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_InvoiceLines_PackageTypeID</h5>
+        <ul class="io">
+          <li>
+													(25% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>PackageTypeID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_InvoiceLines_StockItemID</h5>
+        <ul class="io">
+          <li>
+													(0.44% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>StockItemID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Invoices.html">Sales.Invoices</a></h5><br><br><ul class="rl">
+          <li>InvoiceID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.PackageTypes.html">Warehouse.PackageTypes</a></h5><br><br><ul class="rl">
+          <li>PackageTypeID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItems.html">Warehouse.StockItems</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./Integration.GetSaleUpdates.html">Integration.GetSaleUpdates</a></h5><br><br><ul class="rl">
+          <li>Description</li>
+          <li>ExtendedPrice</li>
+          <li>InvoiceID</li>
+          <li>InvoiceLineID</li>
+          <li>LastEditedWhen</li>
+          <li>LineProfit</li>
+          <li>PackageTypeID</li>
+          <li>Quantity</li>
+          <li>StockItemID</li>
+          <li>TaxAmount</li>
+          <li>TaxRate</li>
+          <li>UnitPrice</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.InvoiceCustomerOrders.html">Website.InvoiceCustomerOrders</a></h5><br><br><ul class="rl">
+          <li>Description</li>
+          <li>ExtendedPrice</li>
+          <li>InvoiceID</li>
+          <li>InvoiceLineID</li>
+          <li>LastEditedBy</li>
+          <li>LastEditedWhen</li>
+          <li>LineProfit</li>
+          <li>PackageTypeID</li>
+          <li>Quantity</li>
+          <li>StockItemID</li>
+          <li>TaxAmount</li>
+          <li>TaxRate</li>
+          <li>UnitPrice</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

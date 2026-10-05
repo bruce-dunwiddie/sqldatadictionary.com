@@ -1,0 +1,161 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Warehouse.StockItemHoldings</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Warehouse.StockItemHoldings">Warehouse.StockItemHoldings</a></span><span class="rc">
+									(227 rows)
+								</span></h3><br><p class="td">Non-temporal attributes for stock items</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>StockItemID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ID of the stock item that this holding relates to (this table holds non-temporal columns for stock)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>QuantityOnHand</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Quantity currently on hand (if tracked)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>BinLocation</span></td>
+        <td class="tr"><span>nvarchar(20)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Bin location (ie location of this stock item within the depot)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LastStocktakeQuantity</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Quantity at last stocktake (if tracked)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LastCostPrice</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Unit cost price the last time this stock item was purchased</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ReorderLevel</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Quantity below which reordering should take place</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TargetStockLevel</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Typical quantity ordered</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LastEditedWhen</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>sysdatetime()</span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Warehouse_StockItemHoldings</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(0.44% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>StockItemID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItems.html">Warehouse.StockItems</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./Integration.GetStockHoldingUpdates.html">Integration.GetStockHoldingUpdates</a></h5><br><br><ul class="rl">
+          <li>BinLocation</li>
+          <li>LastCostPrice</li>
+          <li>LastStocktakeQuantity</li>
+          <li>QuantityOnHand</li>
+          <li>ReorderLevel</li>
+          <li>StockItemID</li>
+          <li>TargetStockLevel</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.InvoiceCustomerOrders.html">Website.InvoiceCustomerOrders</a></h5><br><br><ul class="rl">
+          <li>LastCostPrice</li>
+          <li>LastEditedBy</li>
+          <li>LastEditedWhen</li>
+          <li>QuantityOnHand</li>
+          <li>StockItemID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

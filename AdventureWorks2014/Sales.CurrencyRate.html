@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sales.CurrencyRate</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Sales.CurrencyRate">Sales.CurrencyRate</a></span><span class="rc">
+									(13,532 rows)
+								</span></h3><br><p class="td">Currency exchange rates.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>CurrencyRateID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir">X</td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key for CurrencyRate records.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>CurrencyRateDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the exchange rate was obtained.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK, FK</span></td>
+        <td class="cr"><span>FromCurrencyCode</span></td>
+        <td class="tr"><span>nchar(3)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Exchange rate was converted from this currency code.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK, FK</span></td>
+        <td class="cr"><span>ToCurrencyCode</span></td>
+        <td class="tr"><span>nchar(3)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Exchange rate was converted to this currency code.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>AverageRate</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Average exchange rate for the day.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>EndOfDayRate</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Final exchange rate for the day.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_CurrencyRate_CurrencyRateID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>CurrencyRateID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_CurrencyRate_CurrencyRateDate_FromCurrencyCode_ToCurrencyCode</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index.</p><br><ul class="il">
+          <li>CurrencyRateDate</li>
+          <li>FromCurrencyCode</li>
+          <li>ToCurrencyCode</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Sales.Currency.html">Sales.Currency</a></h5><br><br><ul class="rl">
+          <li>CurrencyCode<span class="rlc">
+													(FromCurrencyCode)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Currency.html">Sales.Currency</a></h5><br><br><ul class="rl">
+          <li>CurrencyCode<span class="rlc">
+													(ToCurrencyCode)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Sales.SalesOrderHeader.html">Sales.SalesOrderHeader</a></h5><br><br><ul class="rl">
+          <li>CurrencyRateID</li>
+        </ul>
+      </li><br></ul>
+  </body>
+</html>

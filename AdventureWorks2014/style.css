@@ -1,0 +1,313 @@
+body {
+	padding: 15px 35px 50px 35px;
+	font-size: 12px;
+	font-family: Verdana, Helvetica, sans-serif;
+	line-height: 16px;
+}
+
+a:link {
+	color: #0000EE;
+}
+
+a:visited {
+	color: #0000EE;
+}
+
+a:active {
+	color: #0000EE;
+}
+
+h1 {
+	text-align: center;
+	font-size: 22px;
+	line-height: 26px;
+	font-weight: bold;
+	text-decoration: underline;
+	white-space: nowrap;
+}
+
+h2 {
+	/* object type */
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: bold;
+	text-decoration: underline;
+	white-space: nowrap;
+}
+
+h3 {
+	/* object name */
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+h4 {
+	/* sub object type */
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+h5 {
+	/* sub object name */
+	font-weight: bold;
+	display: inline;
+	white-space: nowrap;
+}
+
+ul {
+	list-style-type: none;
+}
+
+p {
+	font-style: italic;
+}
+
+table {
+	width: 100%;
+}
+
+.demo {
+	font-size: 20px;
+	line-height: 24px;
+	text-align: center;
+	text-indent: 0px;
+}
+
+.lu {
+	text-align: center;
+	font-style: italic;
+	text-indent: 0px;
+}
+
+.dd {
+	text-indent: 50px;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.tl li {
+	white-space: nowrap;
+}
+
+.mc td {
+	width: 33%;
+	padding: 5px 5px 5px 0px;
+}
+
+.mc a {
+	font-weight: bold;
+}
+
+.tn {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* row count */
+.rc {
+	font-style: italic;
+}
+
+.td {
+	text-indent: 50px;
+}
+
+.t {
+	width: 700px;
+}
+
+.b {
+	padding: 0;
+	border: 1px solid #808080;
+}
+
+	.b th {
+		white-space: nowrap;
+		padding: 2px 8px 2px 8px;
+		border: 1px solid #808080;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	.b span {
+		white-space: nowrap;
+	}
+
+	.b td {
+		padding: 2px 8px 2px 8px;
+		border: 1px solid #808080;
+	}
+
+.v {
+	width: 500px;
+}
+
+.p {
+	width: 500px;
+}
+
+.f {
+	width: 500px;
+}
+
+.s {
+	width: 1px;
+}
+
+.h {
+	background-color: lightgray;
+}
+
+.c {
+	text-align: center;
+}
+
+.pr {
+	text-align: center;
+	font-weight: bold;
+	width: 1px;
+	white-space: nowrap;
+}
+
+	.pr span {
+		white-space: nowrap;
+	}
+
+.cr span {
+	white-space: nowrap;
+}
+
+.tr {
+	width: 1px;
+}
+
+	.tr span {
+		white-space: nowrap;
+	}
+
+.ir {
+	text-align: center;
+	width: 1px;
+}
+
+.nr {
+	text-align: center;
+	width: 1px;
+}
+
+.dr {
+	text-align: center;
+	width: 1px;
+}
+
+	.dr span {
+		white-space: nowrap;
+	}
+
+.cd {
+	background-color: #D8EFF3;
+	font-style: italic;
+	text-indent: 50px;
+}
+
+.in {
+	text-indent: 50px;
+}
+
+.id {
+	text-indent: 100px;
+}
+
+/* index column list */
+.il {
+	text-indent: 100px;
+}
+
+	.il li {
+		white-space: nowrap;
+	}
+
+/* index column option */
+.ilo {
+	font-style: italic;
+}
+
+/* index options */
+.io {
+	display: inline;
+}
+
+	.io li {
+		display: inline;
+		font-style: italic;
+		font-weight: normal;
+	}
+
+.un {
+	text-indent: 50px;
+	font-weight: bold;
+}
+
+.rl {
+	text-indent: 100px;
+	font-weight: normal;
+}
+
+/* reference table */
+.rt {
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+/* reference column list other name */
+.rlc {
+	font-style: italic;
+}
+
+@media print {
+	body {
+		font-size: 14px;
+		line-height: 18px;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+		a:link {
+			color: black;
+		}
+
+		a:visited {
+			color: black;
+		}
+
+		a:active {
+			color: black;
+		}
+
+	h1 {
+		font-size: 24px;
+		line-height: 28px;
+	}
+
+	h2 {
+		/* object type */
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	.demo {
+		font-size: 22px;
+		line-height: 26px;
+	}
+
+	.dd {
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	.tn {
+		text-decoration: none;
+	}
+}

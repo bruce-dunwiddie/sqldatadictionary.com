@@ -1,0 +1,183 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Purchasing.PurchaseOrderDetail</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Purchasing.PurchaseOrderDetail">Purchasing.PurchaseOrderDetail</a></span><span class="rc">
+									(8,845 rows)
+								</span></h3><br><p class="td">Individual products associated with a specific purchase order. See PurchaseOrderHeader.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>PurchaseOrderID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key. Foreign key to PurchaseOrderHeader.PurchaseOrderID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>PurchaseOrderDetailID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir">X</td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key. One line number per purchased product.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DueDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date the product is expected to be received.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>OrderQty</span></td>
+        <td class="tr"><span>smallint</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Quantity ordered.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>ProductID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Product identification number. Foreign key to Product.ProductID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>UnitPrice</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Vendor's selling price of a single product.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LineTotal</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Per product subtotal. Computed as OrderQty * UnitPrice.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ReceivedQty</span></td>
+        <td class="tr"><span>decimal(8,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Quantity actually received from the vendor.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>RejectedQty</span></td>
+        <td class="tr"><span>decimal(8,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Quantity rejected during inspection.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>StockedQty</span></td>
+        <td class="tr"><span>decimal(9,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Quantity accepted into inventory. Computed as ReceivedQty - RejectedQty.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_PurchaseOrderDetail_PurchaseOrderID_PurchaseOrderDetailID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>PurchaseOrderID</li>
+          <li>PurchaseOrderDetailID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_PurchaseOrderDetail_ProductID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>ProductID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Production.Product.html">Production.Product</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.PurchaseOrderHeader.html">Purchasing.PurchaseOrderHeader</a></h5><br><br><ul class="rl">
+          <li>PurchaseOrderID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Triggers:</h4><br><ul>
+      <li class="in">
+        <h5><a id="Purchasing.iPurchaseOrderDetail">iPurchaseOrderDetail</a></h5><span class="rlc">
+										(After
+									Insert)</span><br><br><p class="id">AFTER INSERT trigger that inserts a row in the TransactionHistory table and updates the PurchaseOrderHeader.SubTotal column.</p><br></li>
+      <li class="in">
+        <h5><a id="Purchasing.uPurchaseOrderDetail">uPurchaseOrderDetail</a></h5><span class="rlc">
+										(After
+									Update)</span><br><br><p class="id">AFTER UPDATE trigger that inserts a row in the TransactionHistory table, updates ModifiedDate in PurchaseOrderDetail and updates the PurchaseOrderHeader.SubTotal column.</p><br></li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sales.Customer</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Sales.Customer">Sales.Customer</a></span><span class="rc">
+									(19,820 rows)
+								</span></h3><br><p class="td">Current customer information. Also see the Person and Store tables.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>CustomerID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir">X</td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>PersonID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Foreign key to Person.BusinessEntityID</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>StoreID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Foreign key to Store.BusinessEntityID</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>TerritoryID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ID of the territory in which the customer is located. Foreign key to SalesTerritory.SalesTerritoryID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>AccountNumber</span></td>
+        <td class="tr"><span>varchar(10)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Unique number identifying the customer assigned by the accounting system.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>rowguid</span></td>
+        <td class="tr"><span>uniqueidentifier</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>newid()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Customer_CustomerID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_Customer_AccountNumber</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index.</p><br><ul class="il">
+          <li>AccountNumber</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_Customer_rowguid</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index. Used to support replication samples.</p><br><ul class="il">
+          <li>rowguid</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Customer_TerritoryID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>TerritoryID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Person.Person.html">Person.Person</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SalesTerritory.html">Sales.SalesTerritory</a></h5><br><br><ul class="rl">
+          <li>TerritoryID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Store.html">Sales.Store</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID<span class="rlc">
+													(StoreID)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Sales.SalesOrderHeader.html">Sales.SalesOrderHeader</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Function <h5><a href="./dbo.ufnGetContactInformation.html">dbo.ufnGetContactInformation</a></h5><br><br><ul class="rl">
+          <li>PersonID</li>
+          <li>StoreID</li>
+        </ul><br></li>
+      <li class="un">Trigger <h5><a href="./Sales.SalesOrderDetail.html#Sales.iduSalesOrderDetail">Sales.iduSalesOrderDetail</a>
+										on <a href="./Sales.SalesOrderDetail.html">Sales.SalesOrderDetail</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>PersonID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vIndividualCustomer.html">Sales.vIndividualCustomer</a></h5><br><br><ul class="rl">
+          <li>PersonID</li>
+          <li>StoreID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

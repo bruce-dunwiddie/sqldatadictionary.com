@@ -1,0 +1,175 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Integration.GetSaleUpdates</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Procedure <a id="Integration.GetSaleUpdates">Integration.GetSaleUpdates</a></span></h3><br><table class="p b">
+      <tr class="h">
+        <th>Parameter</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Default</th>
+        <th class="s">Is Output</th>
+      </tr>
+      <tr>
+        <td><span>@LastCutoff</span></td>
+        <td class="s"><span>datetime2</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>@NewCutoff</span></td>
+        <td class="s"><span>datetime2</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+    </table><br><h4>Result:</h4><br><table class="p b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td><span>Invoice Date Key</span></td>
+        <td class="s"><span>date</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>Delivery Date Key</span></td>
+        <td class="s"><span>date</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>WWI Invoice ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Description</span></td>
+        <td class="s"><span>nvarchar(100)</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Package</span></td>
+        <td class="s"><span>nvarchar(50)</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Quantity</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Unit Price</span></td>
+        <td class="s"><span>decimal(18,2)</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>Tax Rate</span></td>
+        <td class="s"><span>decimal(18,3)</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Total Excluding Tax</span></td>
+        <td class="s"><span>decimal(19,2)</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>Tax Amount</span></td>
+        <td class="s"><span>decimal(18,2)</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Profit</span></td>
+        <td class="s"><span>decimal(18,2)</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Total Including Tax</span></td>
+        <td class="s"><span>decimal(18,2)</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Total Dry Items</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Total Chiller Items</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>WWI City ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>WWI Customer ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>WWI Bill To Customer ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>WWI Stock Item ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>WWI Saleperson ID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>Last Modified When</span></td>
+        <td class="s"><span>datetime2</span></td>
+        <td class="s c"></td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>DeliveryCityID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.InvoiceLines.html">Sales.InvoiceLines</a></h5><br><br><ul class="rl">
+          <li>Description</li>
+          <li>ExtendedPrice</li>
+          <li>InvoiceID</li>
+          <li>InvoiceLineID</li>
+          <li>LastEditedWhen</li>
+          <li>LineProfit</li>
+          <li>PackageTypeID</li>
+          <li>Quantity</li>
+          <li>StockItemID</li>
+          <li>TaxAmount</li>
+          <li>TaxRate</li>
+          <li>UnitPrice</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.Invoices.html">Sales.Invoices</a></h5><br><br><ul class="rl">
+          <li>BillToCustomerID</li>
+          <li>ConfirmedDeliveryTime</li>
+          <li>CustomerID</li>
+          <li>InvoiceDate</li>
+          <li>InvoiceID</li>
+          <li>LastEditedWhen</li>
+          <li>SalespersonPersonID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Warehouse.PackageTypes.html">Warehouse.PackageTypes</a></h5><br><br><ul class="rl">
+          <li>PackageTypeID</li>
+          <li>PackageTypeName</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Warehouse.StockItems.html">Warehouse.StockItems</a></h5><br><br><ul class="rl">
+          <li>IsChillerStock</li>
+          <li>StockItemID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Website.InvoiceCustomerOrders</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Procedure <a id="Website.InvoiceCustomerOrders">Website.InvoiceCustomerOrders</a></span></h3><br><table class="p b">
+      <tr class="h">
+        <th>Parameter</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Default</th>
+        <th class="s">Is Output</th>
+      </tr>
+      <tr>
+        <td><span>@OrdersToInvoice</span></td>
+        <td class="s"><span>OrderIDList</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>@PackedByPersonID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>@InvoicedByPersonID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Sequence <h5><a href="./Sequences.InvoiceID.html">Sequences.InvoiceID</a></h5><br><br></li>
+      <li class="un">Table <h5><a href="./Application.TransactionTypes.html">Application.TransactionTypes</a></h5><br><br><ul class="rl">
+          <li>TransactionTypeID</li>
+          <li>TransactionTypeName</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>BillToCustomerID</li>
+          <li>CustomerID</li>
+          <li>DeliveryAddressLine1</li>
+          <li>DeliveryAddressLine2</li>
+          <li>DeliveryMethodID</li>
+          <li>DeliveryRun</li>
+          <li>PrimaryContactPersonID</li>
+          <li>RunPosition</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.CustomerTransactions.html">Sales.CustomerTransactions</a></h5><br><br><ul class="rl">
+          <li>AmountExcludingTax</li>
+          <li>CustomerID</li>
+          <li>FinalizationDate</li>
+          <li>InvoiceID</li>
+          <li>LastEditedBy</li>
+          <li>LastEditedWhen</li>
+          <li>OutstandingBalance</li>
+          <li>PaymentMethodID</li>
+          <li>TaxAmount</li>
+          <li>TransactionAmount</li>
+          <li>TransactionDate</li>
+          <li>TransactionTypeID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.InvoiceLines.html">Sales.InvoiceLines</a></h5><br><br><ul class="rl">
+          <li>Description</li>
+          <li>ExtendedPrice</li>
+          <li>InvoiceID</li>
+          <li>InvoiceLineID</li>
+          <li>LastEditedBy</li>
+          <li>LastEditedWhen</li>
+          <li>LineProfit</li>
+          <li>PackageTypeID</li>
+          <li>Quantity</li>
+          <li>StockItemID</li>
+          <li>TaxAmount</li>
+          <li>TaxRate</li>
+          <li>UnitPrice</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.Invoices.html">Sales.Invoices</a></h5><br><br><ul class="rl">
+          <li>AccountsPersonID</li>
+          <li>BillToCustomerID</li>
+          <li>Comments</li>
+          <li>ContactPersonID</li>
+          <li>CreditNoteReason</li>
+          <li>CustomerID</li>
+          <li>CustomerPurchaseOrderNumber</li>
+          <li>DeliveryInstructions</li>
+          <li>DeliveryMethodID</li>
+          <li>DeliveryRun</li>
+          <li>InternalComments</li>
+          <li>InvoiceDate</li>
+          <li>InvoiceID</li>
+          <li>IsCreditNote</li>
+          <li>LastEditedBy</li>
+          <li>LastEditedWhen</li>
+          <li>OrderID</li>
+          <li>PackedByPersonID</li>
+          <li>ReturnedDeliveryData</li>
+          <li>RunPosition</li>
+          <li>SalespersonPersonID</li>
+          <li>TotalChillerItems</li>
+          <li>TotalDryItems</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.OrderLines.html">Sales.OrderLines</a></h5><br><br><ul class="rl">
+          <li>Description</li>
+          <li>OrderID</li>
+          <li>OrderLineID</li>
+          <li>PackageTypeID</li>
+          <li>PickedQuantity</li>
+          <li>StockItemID</li>
+          <li>TaxRate</li>
+          <li>UnitPrice</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.Orders.html">Sales.Orders</a></h5><br><br><ul class="rl">
+          <li>ContactPersonID</li>
+          <li>CustomerID</li>
+          <li>CustomerPurchaseOrderNumber</li>
+          <li>OrderID</li>
+          <li>PickingCompletedWhen</li>
+          <li>SalespersonPersonID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Warehouse.StockItemHoldings.html">Warehouse.StockItemHoldings</a></h5><br><br><ul class="rl">
+          <li>LastCostPrice</li>
+          <li>LastEditedBy</li>
+          <li>LastEditedWhen</li>
+          <li>QuantityOnHand</li>
+          <li>StockItemID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Warehouse.StockItems.html">Warehouse.StockItems</a></h5><br><br><ul class="rl">
+          <li>IsChillerStock</li>
+          <li>StockItemID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Warehouse.StockItemTransactions.html">Warehouse.StockItemTransactions</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>InvoiceID</li>
+          <li>LastEditedBy</li>
+          <li>LastEditedWhen</li>
+          <li>PurchaseOrderID</li>
+          <li>Quantity</li>
+          <li>StockItemID</li>
+          <li>SupplierID</li>
+          <li>TransactionOccurredWhen</li>
+          <li>TransactionTypeID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

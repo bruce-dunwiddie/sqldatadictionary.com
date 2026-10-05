@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>dbo.uspGetBillOfMaterials</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Procedure <a id="dbo.uspGetBillOfMaterials">dbo.uspGetBillOfMaterials</a></span></h3><br><p class="td">Stored procedure using a recursive query to return a multi-level bill of material for the specified ProductID.</p><br><table class="p b">
+      <tr class="h">
+        <th>Parameter</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Default</th>
+        <th class="s">Is Output</th>
+      </tr>
+      <tr>
+        <td><span>@StartProductID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="4">Input parameter for the stored procedure uspGetBillOfMaterials. Enter a valid ProductID from the Production.Product table.</td>
+      </tr>
+      <tr>
+        <td><span>@CheckDate</span></td>
+        <td class="s"><span>datetime</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="4">Input parameter for the stored procedure uspGetBillOfMaterials used to eliminate components not used after that date. Enter a valid date.</td>
+      </tr>
+    </table><br><h4>Result:</h4><br><table class="p b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td><span>ProductAssemblyID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>ComponentID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>ComponentDesc</span></td>
+        <td class="s"><span>nvarchar(50)</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>TotalQuantity</span></td>
+        <td class="s"><span>decimal(38,2)</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>StandardCost</span></td>
+        <td class="s"><span>money</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>ListPrice</span></td>
+        <td class="s"><span>money</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>BOMLevel</span></td>
+        <td class="s"><span>smallint</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>RecursionLevel</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c">X</td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./Production.BillOfMaterials.html">Production.BillOfMaterials</a></h5><br><br><ul class="rl">
+          <li>BOMLevel</li>
+          <li>ComponentID</li>
+          <li>EndDate</li>
+          <li>PerAssemblyQty</li>
+          <li>ProductAssemblyID</li>
+          <li>StartDate</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Production.Product.html">Production.Product</a></h5><br><br><ul class="rl">
+          <li>ListPrice</li>
+          <li>Name</li>
+          <li>ProductID</li>
+          <li>StandardCost</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

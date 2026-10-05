@@ -1,0 +1,196 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Application.StateProvinces</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Application.StateProvinces">Application.StateProvinces</a></span><span class="rc">
+									(53 rows)
+								</span></h3><br><p class="td">States or provinces that contain cities (including geographic location)</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>StateProvinceID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[StateProvinceID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used for reference to a state or province within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>StateProvinceCode</span></td>
+        <td class="tr"><span>nvarchar(5)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Common code for this state or province (such as WA - Washington for the USA)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>StateProvinceName</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Formal name of the state or province</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>CountryID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Country for this StateProvince</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SalesTerritory</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Sales territory for this StateProvince</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Border</span></td>
+        <td class="tr"><span>geography</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Geographic boundary of the state or province</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LatestRecordedPopulation</span></td>
+        <td class="tr"><span>bigint</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Latest available population for the StateProvince</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidFrom</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidTo</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Application_StateProvinces</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(1.89% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>StateProvinceID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>UQ_Application_StateProvinces_StateProvinceName</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+          <li>
+													(1.89% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>StateProvinceName</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Application_StateProvinces_CountryID</h5>
+        <ul class="io">
+          <li>
+													(100% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>CountryID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Application_StateProvinces_SalesTerritory</h5>
+        <ul class="io">
+          <li>
+													(11.11% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Index used to quickly locate sales territories</p><br><ul class="il">
+          <li>SalesTerritory</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.Countries.html">Application.Countries</a></h5><br><br><ul class="rl">
+          <li>CountryID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.Cities.html">Application.Cities</a></h5><br><br><ul class="rl">
+          <li>StateProvinceID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Function <h5><a href="./Application.DetermineCustomerAccess.html">Application.DetermineCustomerAccess</a></h5><br><br><ul class="rl">
+          <li>SalesTerritory</li>
+          <li>StateProvinceID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Integration.GetCityUpdates.html">Integration.GetCityUpdates</a></h5><br><br><ul class="rl">
+          <li>StateProvinceID</li>
+          <li>ValidFrom</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

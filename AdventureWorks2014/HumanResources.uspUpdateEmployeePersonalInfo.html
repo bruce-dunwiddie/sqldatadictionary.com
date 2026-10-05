@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>HumanResources.uspUpdateEmployeePersonalInfo</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Procedure <a id="HumanResources.uspUpdateEmployeePersonalInfo">HumanResources.uspUpdateEmployeePersonalInfo</a></span></h3><br><p class="td">Updates the Employee table with the values specified in the input parameters for the given EmployeeID.</p><br><table class="p b">
+      <tr class="h">
+        <th>Parameter</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Default</th>
+        <th class="s">Is Output</th>
+      </tr>
+      <tr>
+        <td><span>@BusinessEntityID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="4">Input parameter for the stored procedure uspUpdateEmployeePersonalInfo. Enter a valid BusinessEntityID from the HumanResources.Employee table.</td>
+      </tr>
+      <tr>
+        <td><span>@NationalIDNumber</span></td>
+        <td class="s"><span>nvarchar(15)</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="4">Input parameter for the stored procedure uspUpdateEmployeeHireInfo. Enter a national ID for the employee.</td>
+      </tr>
+      <tr>
+        <td><span>@BirthDate</span></td>
+        <td class="s"><span>datetime</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="4">Input parameter for the stored procedure uspUpdateEmployeeHireInfo. Enter a birth date for the employee.</td>
+      </tr>
+      <tr>
+        <td><span>@MaritalStatus</span></td>
+        <td class="s"><span>nchar(1)</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="4">Input parameter for the stored procedure uspUpdateEmployeeHireInfo. Enter a marital status for the employee.</td>
+      </tr>
+      <tr>
+        <td><span>@Gender</span></td>
+        <td class="s"><span>nchar(1)</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="4">Input parameter for the stored procedure uspUpdateEmployeeHireInfo. Enter a gender for the employee.</td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./dbo.uspLogError.html">dbo.uspLogError</a></h5><br><br></li>
+      <li class="un">Table <h5><a href="./HumanResources.Employee.html">HumanResources.Employee</a></h5><br><br><ul class="rl">
+          <li>BirthDate</li>
+          <li>BusinessEntityID</li>
+          <li>Gender</li>
+          <li>MaritalStatus</li>
+          <li>NationalIDNumber</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

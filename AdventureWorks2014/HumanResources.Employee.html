@@ -1,0 +1,343 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>HumanResources.Employee</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="HumanResources.Employee">HumanResources.Employee</a></span><span class="rc">
+									(290 rows)
+								</span></h3><br><p class="td">Employee information such as salary, department, and title.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>BusinessEntityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key for Employee records.  Foreign key to BusinessEntity.BusinessEntityID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>NationalIDNumber</span></td>
+        <td class="tr"><span>nvarchar(15)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Unique national identification number such as a social security number.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>LoginID</span></td>
+        <td class="tr"><span>nvarchar(256)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Network login.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>OrganizationNode</span></td>
+        <td class="tr"><span>hierarchyid</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Where the employee is located in corporate hierarchy.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>OrganizationLevel</span></td>
+        <td class="tr"><span>smallint</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">The depth of the employee in the corporate hierarchy.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>JobTitle</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Work title such as Buyer or Sales Representative.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>BirthDate</span></td>
+        <td class="tr"><span>date</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date of birth.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>MaritalStatus</span></td>
+        <td class="tr"><span>nchar(1)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">M = Married, S = Single</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Gender</span></td>
+        <td class="tr"><span>nchar(1)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">M = Male, F = Female</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>HireDate</span></td>
+        <td class="tr"><span>date</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Employee hired on this date.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SalariedFlag</span></td>
+        <td class="tr"><span>Flag(bit)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>1</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Job classification. 0 = Hourly, not exempt from collective bargaining. 1 = Salaried, exempt from collective bargaining.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>VacationHours</span></td>
+        <td class="tr"><span>smallint</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Number of available vacation hours.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SickLeaveHours</span></td>
+        <td class="tr"><span>smallint</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Number of available sick leave hours.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>CurrentFlag</span></td>
+        <td class="tr"><span>Flag(bit)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>1</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">0 = Inactive, 1 = Active</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>rowguid</span></td>
+        <td class="tr"><span>uniqueidentifier</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>newid()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Employee_BusinessEntityID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_Employee_LoginID</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index.</p><br><ul class="il">
+          <li>LoginID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_Employee_NationalIDNumber</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index.</p><br><ul class="il">
+          <li>NationalIDNumber</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_Employee_rowguid</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index. Used to support replication samples.</p><br><ul class="il">
+          <li>rowguid</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Employee_OrganizationLevel_OrganizationNode</h5>
+        <ul class="io"></ul><br><br><p class="id">Unique nonclustered index.</p><br><ul class="il">
+          <li>OrganizationLevel</li>
+          <li>OrganizationNode</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Employee_OrganizationNode</h5>
+        <ul class="io"></ul><br><br><p class="id">Unique nonclustered index.</p><br><ul class="il">
+          <li>OrganizationNode</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Person.Person.html">Person.Person</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./HumanResources.EmployeeDepartmentHistory.html">HumanResources.EmployeeDepartmentHistory</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./HumanResources.EmployeePayHistory.html">HumanResources.EmployeePayHistory</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./HumanResources.JobCandidate.html">HumanResources.JobCandidate</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.Document.html">Production.Document</a></h5><br><br><ul class="rl">
+          <li>Owner<span class="rlc">
+													(BusinessEntityID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.PurchaseOrderHeader.html">Purchasing.PurchaseOrderHeader</a></h5><br><br><ul class="rl">
+          <li>EmployeeID<span class="rlc">
+													(BusinessEntityID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SalesPerson.html">Sales.SalesPerson</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Triggers:</h4><br><ul>
+      <li class="in">
+        <h5><a id="HumanResources.dEmployee">dEmployee</a></h5><span class="rlc">
+										(Instead Of
+									Delete)</span><br><br><p class="id">INSTEAD OF DELETE trigger which keeps Employees from being deleted.</p><br></li>
+    </ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Function <h5><a href="./dbo.ufnGetContactInformation.html">dbo.ufnGetContactInformation</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>JobTitle</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./dbo.uspGetEmployeeManagers.html">dbo.uspGetEmployeeManagers</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>JobTitle</li>
+          <li>OrganizationNode</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./dbo.uspGetManagerEmployees.html">dbo.uspGetManagerEmployees</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>OrganizationNode</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./HumanResources.uspUpdateEmployeeHireInfo.html">HumanResources.uspUpdateEmployeeHireInfo</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>CurrentFlag</li>
+          <li>HireDate</li>
+          <li>JobTitle</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./HumanResources.uspUpdateEmployeeLogin.html">HumanResources.uspUpdateEmployeeLogin</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>CurrentFlag</li>
+          <li>HireDate</li>
+          <li>JobTitle</li>
+          <li>LoginID</li>
+          <li>OrganizationNode</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./HumanResources.uspUpdateEmployeePersonalInfo.html">HumanResources.uspUpdateEmployeePersonalInfo</a></h5><br><br><ul class="rl">
+          <li>BirthDate</li>
+          <li>BusinessEntityID</li>
+          <li>Gender</li>
+          <li>MaritalStatus</li>
+          <li>NationalIDNumber</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./HumanResources.vEmployee.html">HumanResources.vEmployee</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>JobTitle</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./HumanResources.vEmployeeDepartment.html">HumanResources.vEmployeeDepartment</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>JobTitle</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./HumanResources.vEmployeeDepartmentHistory.html">HumanResources.vEmployeeDepartmentHistory</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vSalesPerson.html">Sales.vSalesPerson</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>JobTitle</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vSalesPersonSalesByFiscalYears.html">Sales.vSalesPersonSalesByFiscalYears</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>JobTitle</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,495 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sales.Invoices</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Sales.Invoices">Sales.Invoices</a></span><span class="rc">
+									(70,510 rows)
+								</span></h3><br><p class="td">Details of customer invoices</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>InvoiceID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[InvoiceID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used for reference to an invoice within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>CustomerID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Customer for this invoice</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>BillToCustomerID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Bill to customer for this invoice (invoices might be billed to a head office)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>OrderID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Sales order (if any) for this invoice</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>DeliveryMethodID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">How these stock items are beign delivered</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>ContactPersonID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Customer contact for this invoice</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>AccountsPersonID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Customer accounts contact for this invoice</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>SalespersonPersonID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Salesperson for this invoice</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>PackedByPersonID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Person who packed this shipment (or checked the packing)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>InvoiceDate</span></td>
+        <td class="tr"><span>date</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date that this invoice was raised</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>CustomerPurchaseOrderNumber</span></td>
+        <td class="tr"><span>nvarchar(20)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Purchase Order Number received from customer</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>IsCreditNote</span></td>
+        <td class="tr"><span>bit</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Is this a credit note (rather than an invoice)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>CreditNoteReason</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Reason that this credit note needed to be generated (if applicable)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Comments</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Any comments related to this invoice (sent to customer)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DeliveryInstructions</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Any comments related to delivery (sent to customer)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>InternalComments</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Any internal comments related to this invoice (not sent to the customer)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TotalDryItems</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Total number of dry packages (information for the delivery driver)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TotalChillerItems</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Total number of chiller packages (information for the delivery driver)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DeliveryRun</span></td>
+        <td class="tr"><span>nvarchar(5)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Delivery run for this shipment</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>RunPosition</span></td>
+        <td class="tr"><span>nvarchar(5)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Position in the delivery run for this shipment</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ReturnedDeliveryData</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">JSON-structured data returned from delivery devices for deliveries made directly by the organization</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ConfirmedDeliveryTime</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Confirmed delivery date and time promoted from JSON delivery data</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ConfirmedReceivedBy</span></td>
+        <td class="tr"><span>nvarchar(4000)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Confirmed receiver promoted from JSON delivery data</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LastEditedWhen</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>sysdatetime()</span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Sales_Invoices</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(&lt; 0.01% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>InvoiceID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Invoices_AccountsPersonID</h5>
+        <ul class="io">
+          <li>
+													(0.38% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>AccountsPersonID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Invoices_BillToCustomerID</h5>
+        <ul class="io">
+          <li>
+													(0.38% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>BillToCustomerID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Invoices_ContactPersonID</h5>
+        <ul class="io">
+          <li>
+													(0.15% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>ContactPersonID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Invoices_CustomerID</h5>
+        <ul class="io">
+          <li>
+													(0.15% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Invoices_DeliveryMethodID</h5>
+        <ul class="io">
+          <li>
+													(100% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>DeliveryMethodID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Invoices_OrderID</h5>
+        <ul class="io">
+          <li>
+													(&lt; 0.01% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>OrderID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Invoices_PackedByPersonID</h5>
+        <ul class="io">
+          <li>
+													(5.26% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>PackedByPersonID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_Invoices_SalespersonPersonID</h5>
+        <ul class="io">
+          <li>
+													(10% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>SalespersonPersonID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Sales_Invoices_ConfirmedDeliveryTime</h5>
+        <ul class="io">
+          <li>
+													(&lt; 0.01% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Allows quick retrieval of invoices confirmed to have been delivered in a given time period</p><br><ul class="il">
+          <li>ConfirmedDeliveryTime</li>
+          <li>ConfirmedReceivedBy<span class="ilo">
+												(Included)
+											</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.DeliveryMethods.html">Application.DeliveryMethods</a></h5><br><br><ul class="rl">
+          <li>DeliveryMethodID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(AccountsPersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(ContactPersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(PackedByPersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(SalespersonPersonID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>CustomerID<span class="rlc">
+													(BillToCustomerID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Orders.html">Sales.Orders</a></h5><br><br><ul class="rl">
+          <li>OrderID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Sales.CustomerTransactions.html">Sales.CustomerTransactions</a></h5><br><br><ul class="rl">
+          <li>InvoiceID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.InvoiceLines.html">Sales.InvoiceLines</a></h5><br><br><ul class="rl">
+          <li>InvoiceID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItemTransactions.html">Warehouse.StockItemTransactions</a></h5><br><br><ul class="rl">
+          <li>InvoiceID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./Integration.GetSaleUpdates.html">Integration.GetSaleUpdates</a></h5><br><br><ul class="rl">
+          <li>BillToCustomerID</li>
+          <li>ConfirmedDeliveryTime</li>
+          <li>CustomerID</li>
+          <li>InvoiceDate</li>
+          <li>InvoiceID</li>
+          <li>LastEditedWhen</li>
+          <li>SalespersonPersonID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Integration.GetTransactionUpdates.html">Integration.GetTransactionUpdates</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>InvoiceID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.InvoiceCustomerOrders.html">Website.InvoiceCustomerOrders</a></h5><br><br><ul class="rl">
+          <li>AccountsPersonID</li>
+          <li>BillToCustomerID</li>
+          <li>Comments</li>
+          <li>ContactPersonID</li>
+          <li>CreditNoteReason</li>
+          <li>CustomerID</li>
+          <li>CustomerPurchaseOrderNumber</li>
+          <li>DeliveryInstructions</li>
+          <li>DeliveryMethodID</li>
+          <li>DeliveryRun</li>
+          <li>InternalComments</li>
+          <li>InvoiceDate</li>
+          <li>InvoiceID</li>
+          <li>IsCreditNote</li>
+          <li>LastEditedBy</li>
+          <li>LastEditedWhen</li>
+          <li>OrderID</li>
+          <li>PackedByPersonID</li>
+          <li>ReturnedDeliveryData</li>
+          <li>RunPosition</li>
+          <li>SalespersonPersonID</li>
+          <li>TotalChillerItems</li>
+          <li>TotalDryItems</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

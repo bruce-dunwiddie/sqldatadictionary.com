@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Warehouse.StockItemStockGroups</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Warehouse.StockItemStockGroups">Warehouse.StockItemStockGroups</a></span><span class="rc">
+									(442 rows)
+								</span></h3><br><p class="td">Which stock items are in which stock groups</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>StockItemStockGroupID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[StockItemStockGroupID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Internal reference for this linking row</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK, FK</span></td>
+        <td class="cr"><span>StockItemID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Stock item assigned to this stock group (FK indexed via unique constraint)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK, FK</span></td>
+        <td class="cr"><span>StockGroupID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">StockGroup assigned to this stock item (FK indexed via unique constraint)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LastEditedWhen</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>sysdatetime()</span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Warehouse_StockItemStockGroups</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(0.23% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>StockItemStockGroupID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>UQ_StockItemStockGroups_StockGroupID_Lookup</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+          <li>
+													(0.23% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>StockGroupID</li>
+          <li>StockItemID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>UQ_StockItemStockGroups_StockItemID_Lookup</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+          <li>
+													(0.23% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>StockItemID</li>
+          <li>StockGroupID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockGroups.html">Warehouse.StockGroups</a></h5><br><br><ul class="rl">
+          <li>StockGroupID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItems.html">Warehouse.StockItems</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Function <h5><a href="./Website.CalculateCustomerPrice.html">Website.CalculateCustomerPrice</a></h5><br><br><ul class="rl">
+          <li>StockGroupID</li>
+          <li>StockItemID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

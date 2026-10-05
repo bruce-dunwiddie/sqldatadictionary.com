@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Application.DetermineCustomerAccess</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+										Inline
+									
+								Table Valued
+							
+						Function <a id="Application.DetermineCustomerAccess">Application.DetermineCustomerAccess</a></span></h3><br><table class="f b">
+      <tr class="h">
+        <th>Parameter</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td><span>@CityID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s"><span></span></td>
+      </tr>
+    </table><br><h4>Result:</h4><br><table class="p b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td><span>AccessResult</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"></td>
+      </tr>
+    </table><br><h4>Used by:</h4><br><ul>
+      <li class="un">Policy <h5><a href="./Application.FilterCustomersBySalesTerritoryRole.html">Application.FilterCustomersBySalesTerritoryRole</a></h5><br><br></li>
+    </ul>
+    <h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./Application.Cities.html">Application.Cities</a></h5><br><br><ul class="rl">
+          <li>CityID</li>
+          <li>StateProvinceID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Application.StateProvinces.html">Application.StateProvinces</a></h5><br><br><ul class="rl">
+          <li>SalesTerritory</li>
+          <li>StateProvinceID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

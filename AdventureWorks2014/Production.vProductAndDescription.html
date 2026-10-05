@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Production.vProductAndDescription</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						View <a id="Production.vProductAndDescription">Production.vProductAndDescription</a></span></h3><br><p class="td">Product names and descriptions. Product descriptions are provided in multiple languages.</p><br><table class="v b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td class="cr"><span>ProductID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Name</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>ProductModel</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>CultureID</span></td>
+        <td class="tr"><span>nchar(6)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Description</span></td>
+        <td class="tr"><span>nvarchar(400)</span></td>
+        <td class="nr"></td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./Production.Product.html">Production.Product</a></h5><br><br><ul class="rl">
+          <li>Name</li>
+          <li>ProductID</li>
+          <li>ProductModelID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Production.ProductDescription.html">Production.ProductDescription</a></h5><br><br><ul class="rl">
+          <li>Description</li>
+          <li>ProductDescriptionID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Production.ProductModel.html">Production.ProductModel</a></h5><br><br><ul class="rl">
+          <li>Name</li>
+          <li>ProductModelID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Production.ProductModelProductDescriptionCulture.html">Production.ProductModelProductDescriptionCulture</a></h5><br><br><ul class="rl">
+          <li>CultureID</li>
+          <li>ProductDescriptionID</li>
+          <li>ProductModelID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

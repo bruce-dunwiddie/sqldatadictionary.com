@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>dbo.uspGetEmployeeManagers</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Procedure <a id="dbo.uspGetEmployeeManagers">dbo.uspGetEmployeeManagers</a></span></h3><br><p class="td">Stored procedure using a recursive query to return the direct and indirect managers of the specified employee.</p><br><table class="p b">
+      <tr class="h">
+        <th>Parameter</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Default</th>
+        <th class="s">Is Output</th>
+      </tr>
+      <tr>
+        <td><span>@BusinessEntityID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="4">Input parameter for the stored procedure uspGetEmployeeManagers. Enter a valid BusinessEntityID from the HumanResources.Employee table.</td>
+      </tr>
+    </table><br><h4>Result:</h4><br><table class="p b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td><span>RecursionLevel</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>BusinessEntityID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>FirstName</span></td>
+        <td class="s"><span>nvarchar(50)</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>LastName</span></td>
+        <td class="s"><span>nvarchar(50)</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>OrganizationNode</span></td>
+        <td class="s"><span>nvarchar(4000)</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>ManagerFirstName</span></td>
+        <td class="s"><span>nvarchar(50)</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>ManagerLastName</span></td>
+        <td class="s"><span>nvarchar(50)</span></td>
+        <td class="s c"></td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./HumanResources.Employee.html">HumanResources.Employee</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>JobTitle</li>
+          <li>OrganizationNode</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.Person.html">Person.Person</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>FirstName</li>
+          <li>LastName</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

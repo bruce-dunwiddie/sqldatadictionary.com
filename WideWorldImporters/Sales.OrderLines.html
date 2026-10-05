@@ -1,0 +1,295 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sales.OrderLines</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Sales.OrderLines">Sales.OrderLines</a></span><span class="rc">
+									(231,412 rows)
+								</span></h3><br><p class="td">Detail lines from customer orders</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>OrderLineID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[OrderLineID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used for reference to a line on an Order within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>OrderID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Order that this line is associated with</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>StockItemID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Stock item for this order line (FK not indexed as separate index exists)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Description</span></td>
+        <td class="tr"><span>nvarchar(100)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Description of the item supplied (Usually the stock item name but can be overridden)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>PackageTypeID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Type of package to be supplied</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Quantity</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Quantity to be supplied</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>UnitPrice</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Unit price to be charged</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TaxRate</span></td>
+        <td class="tr"><span>decimal(18,3)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Tax rate to be applied</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>PickedQuantity</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Quantity picked from stock</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>PickingCompletedWhen</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">When was picking of this line completed?</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LastEditedWhen</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>sysdatetime()</span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Sales_OrderLines</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(&lt; 0.01% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>OrderLineID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>NCCX_Sales_OrderLines</h5>
+        <ul class="io">
+          <li>(Columnstore)</li>
+        </ul><br><br><ul class="il">
+          <li>OrderID</li>
+          <li>StockItemID</li>
+          <li>Description</li>
+          <li>Quantity</li>
+          <li>UnitPrice</li>
+          <li>PickedQuantity</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_OrderLines_OrderID</h5>
+        <ul class="io">
+          <li>
+													(&lt; 0.01% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>OrderID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_OrderLines_PackageTypeID</h5>
+        <ul class="io">
+          <li>
+													(25% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>PackageTypeID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Sales_OrderLines_AllocatedStockItems</h5>
+        <ul class="io">
+          <li>
+													(0.44% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Allows quick summation of stock item quantites already allocated to uninvoiced orders</p><br><ul class="il">
+          <li>StockItemID</li>
+          <li>PickedQuantity<span class="ilo">
+												(Included)
+											</span></li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Sales_OrderLines_Perf_20160301_01</h5>
+        <ul class="io">
+          <li>
+													(&lt; 0.01% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Improves performance of order picking and invoicing</p><br><ul class="il">
+          <li>PickingCompletedWhen</li>
+          <li>OrderID</li>
+          <li>OrderLineID</li>
+          <li>Quantity<span class="ilo">
+												(Included)
+											</span></li>
+          <li>StockItemID<span class="ilo">
+												(Included)
+											</span></li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Sales_OrderLines_Perf_20160301_02</h5>
+        <ul class="io">
+          <li>
+													(&lt; 0.01% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Improves performance of order picking and invoicing</p><br><ul class="il">
+          <li>StockItemID</li>
+          <li>PickingCompletedWhen</li>
+          <li>OrderID<span class="ilo">
+												(Included)
+											</span></li>
+          <li>PickedQuantity<span class="ilo">
+												(Included)
+											</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Orders.html">Sales.Orders</a></h5><br><br><ul class="rl">
+          <li>OrderID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.PackageTypes.html">Warehouse.PackageTypes</a></h5><br><br><ul class="rl">
+          <li>PackageTypeID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItems.html">Warehouse.StockItems</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./Integration.GetOrderUpdates.html">Integration.GetOrderUpdates</a></h5><br><br><ul class="rl">
+          <li>Description</li>
+          <li>LastEditedWhen</li>
+          <li>OrderID</li>
+          <li>PackageTypeID</li>
+          <li>PickingCompletedWhen</li>
+          <li>Quantity</li>
+          <li>StockItemID</li>
+          <li>TaxRate</li>
+          <li>UnitPrice</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.InsertCustomerOrders.html">Website.InsertCustomerOrders</a></h5><br><br><ul class="rl">
+          <li>Description</li>
+          <li>LastEditedBy</li>
+          <li>LastEditedWhen</li>
+          <li>OrderID</li>
+          <li>PackageTypeID</li>
+          <li>PickedQuantity</li>
+          <li>PickingCompletedWhen</li>
+          <li>Quantity</li>
+          <li>StockItemID</li>
+          <li>TaxRate</li>
+          <li>UnitPrice</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.InvoiceCustomerOrders.html">Website.InvoiceCustomerOrders</a></h5><br><br><ul class="rl">
+          <li>Description</li>
+          <li>OrderID</li>
+          <li>OrderLineID</li>
+          <li>PackageTypeID</li>
+          <li>PickedQuantity</li>
+          <li>StockItemID</li>
+          <li>TaxRate</li>
+          <li>UnitPrice</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

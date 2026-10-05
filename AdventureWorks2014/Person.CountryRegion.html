@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Person.CountryRegion</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Person.CountryRegion">Person.CountryRegion</a></span><span class="rc">
+									(238 rows)
+								</span></h3><br><p class="td">Lookup table containing the ISO standard codes for countries and regions.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>CountryRegionCode</span></td>
+        <td class="tr"><span>nvarchar(3)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ISO standard code for countries and regions.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>Name</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Country or region name.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_CountryRegion_CountryRegionCode</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>CountryRegionCode</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_CountryRegion_Name</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index.</p><br><ul class="il">
+          <li>Name</li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Person.StateProvince.html">Person.StateProvince</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.CountryRegionCurrency.html">Sales.CountryRegionCurrency</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SalesTerritory.html">Sales.SalesTerritory</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">View <h5><a href="./HumanResources.vEmployee.html">HumanResources.vEmployee</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+          <li>Name</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Person.vStateProvinceCountryRegion.html">Person.vStateProvinceCountryRegion</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+          <li>Name</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Purchasing.vVendorWithAddresses.html">Purchasing.vVendorWithAddresses</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+          <li>Name</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vIndividualCustomer.html">Sales.vIndividualCustomer</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+          <li>Name</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vSalesPerson.html">Sales.vSalesPerson</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+          <li>Name</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vStoreWithAddresses.html">Sales.vStoreWithAddresses</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+          <li>Name</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

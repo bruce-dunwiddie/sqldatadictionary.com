@@ -1,0 +1,202 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Application.Cities</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Application.Cities">Application.Cities</a></span><span class="rc">
+									(37,940 rows)
+								</span></h3><br><p class="td">Cities that are part of any address (including geographic location)</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>CityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[CityID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used for reference to a city within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>CityName</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Formal name of the city</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>StateProvinceID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">State or province for this city</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Location</span></td>
+        <td class="tr"><span>geography</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Geographic location of the city</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LatestRecordedPopulation</span></td>
+        <td class="tr"><span>bigint</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Latest available population for the City</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidFrom</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidTo</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Application_Cities</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(&lt; 0.01% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>CityID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Application_Cities_StateProvinceID</h5>
+        <ul class="io">
+          <li>
+													(1.89% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>StateProvinceID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.StateProvinces.html">Application.StateProvinces</a></h5><br><br><ul class="rl">
+          <li>StateProvinceID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.SystemParameters.html">Application.SystemParameters</a></h5><br><br><ul class="rl">
+          <li>DeliveryCityID<span class="rlc">
+													(CityID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.SystemParameters.html">Application.SystemParameters</a></h5><br><br><ul class="rl">
+          <li>PostalCityID<span class="rlc">
+													(CityID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.Suppliers.html">Purchasing.Suppliers</a></h5><br><br><ul class="rl">
+          <li>DeliveryCityID<span class="rlc">
+													(CityID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.Suppliers.html">Purchasing.Suppliers</a></h5><br><br><ul class="rl">
+          <li>PostalCityID<span class="rlc">
+													(CityID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>DeliveryCityID<span class="rlc">
+													(CityID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>PostalCityID<span class="rlc">
+													(CityID)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Function <h5><a href="./Application.DetermineCustomerAccess.html">Application.DetermineCustomerAccess</a></h5><br><br><ul class="rl">
+          <li>CityID</li>
+          <li>StateProvinceID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Integration.GetCityUpdates.html">Integration.GetCityUpdates</a></h5><br><br><ul class="rl">
+          <li>CityID</li>
+          <li>ValidFrom</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.SearchForCustomers.html">Website.SearchForCustomers</a></h5><br><br><ul class="rl">
+          <li>CityID</li>
+          <li>CityName</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.SearchForSuppliers.html">Website.SearchForSuppliers</a></h5><br><br><ul class="rl">
+          <li>CityID</li>
+          <li>CityName</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Website.Customers.html">Website.Customers</a></h5><br><br><ul class="rl">
+          <li>CityID</li>
+          <li>CityName</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Website.Suppliers.html">Website.Suppliers</a></h5><br><br><ul class="rl">
+          <li>CityID</li>
+          <li>CityName</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

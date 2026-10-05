@@ -1,0 +1,273 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sales.SpecialDeals</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Sales.SpecialDeals">Sales.SpecialDeals</a></span><span class="rc">
+									(2 rows)
+								</span></h3><br><p class="td">Special pricing (can include fixed prices, discount $ or discount %)</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>SpecialDealID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[SpecialDealID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ID (sequence based) for a special deal</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>StockItemID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Stock item that the deal applies to (if NULL, then only discounts are permitted not unit prices)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>CustomerID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ID of the customer that the special pricing applies to (if NULL then all customers)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>BuyingGroupID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ID of the buying group that the special pricing applies to (optional)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>CustomerCategoryID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ID of the customer category that the special pricing applies to (optional)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>StockGroupID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ID of the stock group that the special pricing applies to (optional)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DealDescription</span></td>
+        <td class="tr"><span>nvarchar(30)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Description of the special deal</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>StartDate</span></td>
+        <td class="tr"><span>date</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date that the special pricing starts from</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>EndDate</span></td>
+        <td class="tr"><span>date</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date that the special pricing ends on</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DiscountAmount</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Discount per unit to be applied to sale price (optional)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DiscountPercentage</span></td>
+        <td class="tr"><span>decimal(18,3)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Discount percentage per unit to be applied to sale price (optional)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>UnitPrice</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Special price per unit to be applied instead of sale price (optional)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LastEditedWhen</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>sysdatetime()</span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Sales_SpecialDeals</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(50% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>SpecialDealID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_SpecialDeals_BuyingGroupID</h5>
+        <ul class="io">
+          <li>
+													(50% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>BuyingGroupID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_SpecialDeals_CustomerCategoryID</h5>
+        <ul class="io">
+          <li>
+													(100% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>CustomerCategoryID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_SpecialDeals_CustomerID</h5>
+        <ul class="io">
+          <li>
+													(100% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_SpecialDeals_StockGroupID</h5>
+        <ul class="io">
+          <li>
+													(100% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>StockGroupID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Sales_SpecialDeals_StockItemID</h5>
+        <ul class="io">
+          <li>
+													(100% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>StockItemID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.BuyingGroups.html">Sales.BuyingGroups</a></h5><br><br><ul class="rl">
+          <li>BuyingGroupID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.CustomerCategories.html">Sales.CustomerCategories</a></h5><br><br><ul class="rl">
+          <li>CustomerCategoryID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockGroups.html">Warehouse.StockGroups</a></h5><br><br><ul class="rl">
+          <li>StockGroupID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItems.html">Warehouse.StockItems</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Function <h5><a href="./Website.CalculateCustomerPrice.html">Website.CalculateCustomerPrice</a></h5><br><br><ul class="rl">
+          <li>BuyingGroupID</li>
+          <li>CustomerCategoryID</li>
+          <li>CustomerID</li>
+          <li>DiscountAmount</li>
+          <li>DiscountPercentage</li>
+          <li>EndDate</li>
+          <li>StartDate</li>
+          <li>StockGroupID</li>
+          <li>StockItemID</li>
+          <li>UnitPrice</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

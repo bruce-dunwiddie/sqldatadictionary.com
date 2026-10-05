@@ -1,0 +1,187 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Production.BillOfMaterials</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Production.BillOfMaterials">Production.BillOfMaterials</a></span><span class="rc">
+									(2,679 rows)
+								</span></h3><br><p class="td">Items required to make bicycles and bicycle subassemblies. It identifies the heirarchical relationship between a parent product and its components.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>BillOfMaterialsID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir">X</td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key for BillOfMaterials records.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK, FK</span></td>
+        <td class="cr"><span>ProductAssemblyID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Parent product identification number. Foreign key to Product.ProductID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK, FK</span></td>
+        <td class="cr"><span>ComponentID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Component identification number. Foreign key to Product.ProductID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>StartDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date the component started being used in the assembly item.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>EndDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date the component stopped being used in the assembly item.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>UnitMeasureCode</span></td>
+        <td class="tr"><span>nchar(3)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Standard code identifying the unit of measure for the quantity.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>BOMLevel</span></td>
+        <td class="tr"><span>smallint</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Indicates the depth the component is from its parent (AssemblyID).</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>PerAssemblyQty</span></td>
+        <td class="tr"><span>decimal(8,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>1.00</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Quantity of the component needed to create the assembly.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_BillOfMaterials_BillOfMaterialsID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>BillOfMaterialsID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_BillOfMaterials_ProductAssemblyID_ComponentID_StartDate</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Clustered index.</p><br><ul class="il">
+          <li>ProductAssemblyID</li>
+          <li>ComponentID</li>
+          <li>StartDate</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_BillOfMaterials_UnitMeasureCode</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>UnitMeasureCode</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Production.Product.html">Production.Product</a></h5><br><br><ul class="rl">
+          <li>ProductID<span class="rlc">
+													(ComponentID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.Product.html">Production.Product</a></h5><br><br><ul class="rl">
+          <li>ProductID<span class="rlc">
+													(ProductAssemblyID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.UnitMeasure.html">Production.UnitMeasure</a></h5><br><br><ul class="rl">
+          <li>UnitMeasureCode</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./dbo.uspGetBillOfMaterials.html">dbo.uspGetBillOfMaterials</a></h5><br><br><ul class="rl">
+          <li>BOMLevel</li>
+          <li>ComponentID</li>
+          <li>EndDate</li>
+          <li>PerAssemblyQty</li>
+          <li>ProductAssemblyID</li>
+          <li>StartDate</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./dbo.uspGetWhereUsedProductID.html">dbo.uspGetWhereUsedProductID</a></h5><br><br><ul class="rl">
+          <li>BOMLevel</li>
+          <li>ComponentID</li>
+          <li>EndDate</li>
+          <li>PerAssemblyQty</li>
+          <li>ProductAssemblyID</li>
+          <li>StartDate</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

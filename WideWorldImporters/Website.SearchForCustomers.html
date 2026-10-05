@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Website.SearchForCustomers</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Procedure <a id="Website.SearchForCustomers">Website.SearchForCustomers</a></span></h3><br><table class="p b">
+      <tr class="h">
+        <th>Parameter</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Default</th>
+        <th class="s">Is Output</th>
+      </tr>
+      <tr>
+        <td><span>@SearchText</span></td>
+        <td class="s"><span>nvarchar(1000)</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>@MaximumRowsToReturn</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"><span></span></td>
+        <td class="s c"></td>
+      </tr>
+    </table><br><h4>Result:</h4><br><table class="p b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td><span>JSON_F52E2B61-18A1-11d1-B105-00805F49916B</span></td>
+        <td class="s"><span>nvarchar(max)</span></td>
+        <td class="s c">X</td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./Application.Cities.html">Application.Cities</a></h5><br><br><ul class="rl">
+          <li>CityID</li>
+          <li>CityName</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>FullName</li>
+          <li>PersonID</li>
+          <li>PreferredName</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>CustomerID</li>
+          <li>CustomerName</li>
+          <li>DeliveryCityID</li>
+          <li>FaxNumber</li>
+          <li>PhoneNumber</li>
+          <li>PrimaryContactPersonID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

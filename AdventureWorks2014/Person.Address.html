@@ -1,0 +1,229 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Person.Address</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Person.Address">Person.Address</a></span><span class="rc">
+									(19,614 rows)
+								</span></h3><br><p class="td">Street address information for customers, employees, and vendors.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>AddressID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir">X</td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key for Address records.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>AddressLine1</span></td>
+        <td class="tr"><span>nvarchar(60)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">First street address line.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>AddressLine2</span></td>
+        <td class="tr"><span>nvarchar(60)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Second street address line.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>City</span></td>
+        <td class="tr"><span>nvarchar(30)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Name of the city.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK, FK</span></td>
+        <td class="cr"><span>StateProvinceID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Unique identification number for the state or province. Foreign key to StateProvince table.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>PostalCode</span></td>
+        <td class="tr"><span>nvarchar(15)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Postal code for the street address.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SpatialLocation</span></td>
+        <td class="tr"><span>geography</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Latitude and longitude of this address.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>rowguid</span></td>
+        <td class="tr"><span>uniqueidentifier</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>newid()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Address_AddressID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>AddressID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_Address_rowguid</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index. Used to support replication samples.</p><br><ul class="il">
+          <li>rowguid</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Address_AddressLine1_AddressLine2_City_StateProvinceID_PostalCode</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>AddressLine1</li>
+          <li>AddressLine2</li>
+          <li>City</li>
+          <li>StateProvinceID</li>
+          <li>PostalCode</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Address_StateProvinceID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>StateProvinceID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Person.StateProvince.html">Person.StateProvince</a></h5><br><br><ul class="rl">
+          <li>StateProvinceID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Person.BusinessEntityAddress.html">Person.BusinessEntityAddress</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SalesOrderHeader.html">Sales.SalesOrderHeader</a></h5><br><br><ul class="rl">
+          <li>BillToAddressID<span class="rlc">
+													(AddressID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SalesOrderHeader.html">Sales.SalesOrderHeader</a></h5><br><br><ul class="rl">
+          <li>ShipToAddressID<span class="rlc">
+													(AddressID)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">View <h5><a href="./HumanResources.vEmployee.html">HumanResources.vEmployee</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>AddressLine1</li>
+          <li>AddressLine2</li>
+          <li>City</li>
+          <li>PostalCode</li>
+          <li>StateProvinceID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Purchasing.vVendorWithAddresses.html">Purchasing.vVendorWithAddresses</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>AddressLine1</li>
+          <li>AddressLine2</li>
+          <li>City</li>
+          <li>PostalCode</li>
+          <li>StateProvinceID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vIndividualCustomer.html">Sales.vIndividualCustomer</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>AddressLine1</li>
+          <li>AddressLine2</li>
+          <li>City</li>
+          <li>PostalCode</li>
+          <li>StateProvinceID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vSalesPerson.html">Sales.vSalesPerson</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>AddressLine1</li>
+          <li>AddressLine2</li>
+          <li>City</li>
+          <li>PostalCode</li>
+          <li>StateProvinceID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vStoreWithAddresses.html">Sales.vStoreWithAddresses</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>AddressLine1</li>
+          <li>AddressLine2</li>
+          <li>City</li>
+          <li>PostalCode</li>
+          <li>StateProvinceID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

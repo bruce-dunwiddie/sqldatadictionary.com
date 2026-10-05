@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>dbo.ufnGetContactInformation</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+										Multistatement
+									
+								Table Valued
+							
+						Function <a id="dbo.ufnGetContactInformation">dbo.ufnGetContactInformation</a></span></h3><br><p class="td">Table value function returning the first name, last name, job title and contact type for a given contact.</p><br><table class="f b">
+      <tr class="h">
+        <th>Parameter</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td><span>@PersonID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="3">Input parameter for the table value function ufnGetContactInformation. Enter a valid PersonID from the Person.Contact table.</td>
+      </tr>
+    </table><br><h4>Result:</h4><br><table class="p b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td><span>PersonID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s c"></td>
+      </tr>
+      <tr>
+        <td><span>FirstName</span></td>
+        <td class="s"><span>nvarchar(50)</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>LastName</span></td>
+        <td class="s"><span>nvarchar(50)</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>JobTitle</span></td>
+        <td class="s"><span>nvarchar(50)</span></td>
+        <td class="s c">X</td>
+      </tr>
+      <tr>
+        <td><span>BusinessEntityType</span></td>
+        <td class="s"><span>nvarchar(50)</span></td>
+        <td class="s c">X</td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./HumanResources.Employee.html">HumanResources.Employee</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>JobTitle</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.BusinessEntityContact.html">Person.BusinessEntityContact</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>ContactTypeID</li>
+          <li>PersonID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.ContactType.html">Person.ContactType</a></h5><br><br><ul class="rl">
+          <li>ContactTypeID</li>
+          <li>Name</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.Person.html">Person.Person</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>FirstName</li>
+          <li>LastName</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Purchasing.Vendor.html">Purchasing.Vendor</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.Customer.html">Sales.Customer</a></h5><br><br><ul class="rl">
+          <li>PersonID</li>
+          <li>StoreID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.Store.html">Sales.Store</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

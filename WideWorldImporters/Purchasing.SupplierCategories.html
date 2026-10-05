@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Purchasing.SupplierCategories</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Purchasing.SupplierCategories">Purchasing.SupplierCategories</a></span><span class="rc">
+									(9 rows)
+								</span></h3><br><p class="td">Categories for suppliers (ie novelties, toys, clothing, packaging, etc.)</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>SupplierCategoryID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[SupplierCategoryID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used for reference to a supplier category within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>SupplierCategoryName</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Full name of the category that suppliers can be assigned to</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidFrom</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidTo</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Purchasing_SupplierCategories</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(11.11% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>SupplierCategoryID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>UQ_Purchasing_SupplierCategories_SupplierCategoryName</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+          <li>
+													(11.11% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>SupplierCategoryName</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Purchasing.Suppliers.html">Purchasing.Suppliers</a></h5><br><br><ul class="rl">
+          <li>SupplierCategoryID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./Integration.GetSupplierUpdates.html">Integration.GetSupplierUpdates</a></h5><br><br><ul class="rl">
+          <li>SupplierCategoryID</li>
+          <li>ValidFrom</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Website.Suppliers.html">Website.Suppliers</a></h5><br><br><ul class="rl">
+          <li>SupplierCategoryID</li>
+          <li>SupplierCategoryName</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

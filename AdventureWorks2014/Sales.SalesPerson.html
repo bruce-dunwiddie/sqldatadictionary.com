@@ -1,0 +1,192 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sales.SalesPerson</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Sales.SalesPerson">Sales.SalesPerson</a></span><span class="rc">
+									(17 rows)
+								</span></h3><br><p class="td">Sales representative current information.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>BusinessEntityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key for SalesPerson records. Foreign key to Employee.BusinessEntityID</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>TerritoryID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Territory currently assigned to. Foreign key to SalesTerritory.SalesTerritoryID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SalesQuota</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Projected yearly sales.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Bonus</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0.00</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Bonus due if quota is met.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>CommissionPct</span></td>
+        <td class="tr"><span>smallmoney</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0.00</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Commision percent received per sale.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SalesYTD</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0.00</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Sales total year to date.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SalesLastYear</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0.00</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Sales total of previous year.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>rowguid</span></td>
+        <td class="tr"><span>uniqueidentifier</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>newid()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_SalesPerson_BusinessEntityID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_SalesPerson_rowguid</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index. Used to support replication samples.</p><br><ul class="il">
+          <li>rowguid</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./HumanResources.Employee.html">HumanResources.Employee</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SalesTerritory.html">Sales.SalesTerritory</a></h5><br><br><ul class="rl">
+          <li>TerritoryID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Sales.SalesOrderHeader.html">Sales.SalesOrderHeader</a></h5><br><br><ul class="rl">
+          <li>SalesPersonID<span class="rlc">
+													(BusinessEntityID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SalesPersonQuotaHistory.html">Sales.SalesPersonQuotaHistory</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SalesTerritoryHistory.html">Sales.SalesTerritoryHistory</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.Store.html">Sales.Store</a></h5><br><br><ul class="rl">
+          <li>SalesPersonID<span class="rlc">
+													(BusinessEntityID)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Trigger <h5><a href="./Sales.SalesOrderHeader.html#Sales.uSalesOrderHeader">Sales.uSalesOrderHeader</a>
+										on <a href="./Sales.SalesOrderHeader.html">Sales.SalesOrderHeader</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>SalesYTD</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vSalesPerson.html">Sales.vSalesPerson</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>SalesLastYear</li>
+          <li>SalesQuota</li>
+          <li>SalesYTD</li>
+          <li>TerritoryID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vSalesPersonSalesByFiscalYears.html">Sales.vSalesPersonSalesByFiscalYears</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>TerritoryID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

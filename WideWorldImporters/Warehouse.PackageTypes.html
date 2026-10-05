@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Warehouse.PackageTypes</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Warehouse.PackageTypes">Warehouse.PackageTypes</a></span><span class="rc">
+									(14 rows)
+								</span></h3><br><p class="td">Ways that stock items can be packaged (ie: each, box, carton, pallet, kg, etc.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>PackageTypeID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[PackageTypeID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used for reference to a package type within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>PackageTypeName</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Full name of package types that stock items can be purchased in or sold in</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidFrom</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidTo</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Warehouse_PackageTypes</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(7.14% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>PackageTypeID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>UQ_Warehouse_PackageTypes_PackageTypeName</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+          <li>
+													(7.14% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>PackageTypeName</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Purchasing.PurchaseOrderLines.html">Purchasing.PurchaseOrderLines</a></h5><br><br><ul class="rl">
+          <li>PackageTypeID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.InvoiceLines.html">Sales.InvoiceLines</a></h5><br><br><ul class="rl">
+          <li>PackageTypeID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.OrderLines.html">Sales.OrderLines</a></h5><br><br><ul class="rl">
+          <li>PackageTypeID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItems.html">Warehouse.StockItems</a></h5><br><br><ul class="rl">
+          <li>OuterPackageID<span class="rlc">
+													(PackageTypeID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItems.html">Warehouse.StockItems</a></h5><br><br><ul class="rl">
+          <li>UnitPackageID<span class="rlc">
+													(PackageTypeID)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./Integration.GetOrderUpdates.html">Integration.GetOrderUpdates</a></h5><br><br><ul class="rl">
+          <li>PackageTypeID</li>
+          <li>PackageTypeName</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Integration.GetPurchaseUpdates.html">Integration.GetPurchaseUpdates</a></h5><br><br><ul class="rl">
+          <li>PackageTypeID</li>
+          <li>PackageTypeName</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Integration.GetSaleUpdates.html">Integration.GetSaleUpdates</a></h5><br><br><ul class="rl">
+          <li>PackageTypeID</li>
+          <li>PackageTypeName</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

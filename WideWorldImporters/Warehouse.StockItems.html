@@ -1,0 +1,446 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Warehouse.StockItems</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Warehouse.StockItems">Warehouse.StockItems</a></span><span class="rc">
+									(227 rows)
+								</span></h3><br><p class="td">Main entity table for stock items</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>StockItemID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[StockItemID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used for reference to a stock item within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>StockItemName</span></td>
+        <td class="tr"><span>nvarchar(100)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Full name of a stock item (but not a full description)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>SupplierID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Usual supplier for this stock item</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>ColorID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Color (optional) for this stock item</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>UnitPackageID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Usual package for selling units of this stock item</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>OuterPackageID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Usual package for selling outers of this stock item (ie cartons, boxes, etc.)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Brand</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Brand for the stock item (if the item is branded)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Size</span></td>
+        <td class="tr"><span>nvarchar(20)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Size of this item (eg: 100mm)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LeadTimeDays</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Number of days typically taken from order to receipt of this stock item</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>QuantityPerOuter</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Quantity of the stock item in an outer package</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>IsChillerStock</span></td>
+        <td class="tr"><span>bit</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Does this stock item need to be in a chiller?</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Barcode</span></td>
+        <td class="tr"><span>nvarchar(50)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Barcode for this stock item</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TaxRate</span></td>
+        <td class="tr"><span>decimal(18,3)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Tax rate to be applied</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>UnitPrice</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Selling price (ex-tax) for one unit of this product</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>RecommendedRetailPrice</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Recommended retail price for this stock item</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TypicalWeightPerUnit</span></td>
+        <td class="tr"><span>decimal(18,3)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Typical weight for one unit of this product (packaged)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>MarketingComments</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Marketing comments for this stock item (shared outside the organization)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>InternalComments</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Internal comments (not exposed outside organization)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Photo</span></td>
+        <td class="tr"><span>varbinary(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Photo of the product</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>CustomFields</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Custom fields added by system users</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Tags</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Advertising tags associated with this stock item (JSON array retrieved from CustomFields)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SearchDetails</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Combination of columns used by full text search</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidFrom</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ValidTo</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Warehouse_StockItems</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+          <li>
+													(0.44% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>StockItemID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>UQ_Warehouse_StockItems_StockItemName</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+          <li>
+													(0.44% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>StockItemName</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Warehouse_StockItems_ColorID</h5>
+        <ul class="io">
+          <li>
+													(12.5% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>ColorID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Warehouse_StockItems_OuterPackageID</h5>
+        <ul class="io">
+          <li>
+													(33.33% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>OuterPackageID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Warehouse_StockItems_SupplierID</h5>
+        <ul class="io">
+          <li>
+													(14.29% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>SupplierID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Warehouse_StockItems_UnitPackageID</h5>
+        <ul class="io">
+          <li>
+													(25% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>UnitPackageID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.Suppliers.html">Purchasing.Suppliers</a></h5><br><br><ul class="rl">
+          <li>SupplierID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.Colors.html">Warehouse.Colors</a></h5><br><br><ul class="rl">
+          <li>ColorID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.PackageTypes.html">Warehouse.PackageTypes</a></h5><br><br><ul class="rl">
+          <li>PackageTypeID<span class="rlc">
+													(OuterPackageID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.PackageTypes.html">Warehouse.PackageTypes</a></h5><br><br><ul class="rl">
+          <li>PackageTypeID<span class="rlc">
+													(UnitPackageID)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Purchasing.PurchaseOrderLines.html">Purchasing.PurchaseOrderLines</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.InvoiceLines.html">Sales.InvoiceLines</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.OrderLines.html">Sales.OrderLines</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SpecialDeals.html">Sales.SpecialDeals</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItemHoldings.html">Warehouse.StockItemHoldings</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItemStockGroups.html">Warehouse.StockItemStockGroups</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Warehouse.StockItemTransactions.html">Warehouse.StockItemTransactions</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Function <h5><a href="./Website.CalculateCustomerPrice.html">Website.CalculateCustomerPrice</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+          <li>UnitPrice</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Integration.GetPurchaseUpdates.html">Integration.GetPurchaseUpdates</a></h5><br><br><ul class="rl">
+          <li>QuantityPerOuter</li>
+          <li>StockItemID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Integration.GetSaleUpdates.html">Integration.GetSaleUpdates</a></h5><br><br><ul class="rl">
+          <li>IsChillerStock</li>
+          <li>StockItemID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Integration.GetStockItemUpdates.html">Integration.GetStockItemUpdates</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+          <li>ValidFrom</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.InsertCustomerOrders.html">Website.InsertCustomerOrders</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+          <li>TaxRate</li>
+          <li>UnitPackageID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.InvoiceCustomerOrders.html">Website.InvoiceCustomerOrders</a></h5><br><br><ul class="rl">
+          <li>IsChillerStock</li>
+          <li>StockItemID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.SearchForStockItems.html">Website.SearchForStockItems</a></h5><br><br><ul class="rl">
+          <li>SearchDetails</li>
+          <li>StockItemID</li>
+          <li>StockItemName</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./Website.SearchForStockItemsByTags.html">Website.SearchForStockItemsByTags</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+          <li>StockItemName</li>
+          <li>Tags</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

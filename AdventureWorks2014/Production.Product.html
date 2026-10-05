@@ -1,0 +1,446 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Production.Product</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Production.Product">Production.Product</a></span><span class="rc">
+									(504 rows)
+								</span></h3><br><p class="td">Products sold or used in the manfacturing of sold products.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>ProductID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir">X</td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key for Product records.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>Name</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Name of the product.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>ProductNumber</span></td>
+        <td class="tr"><span>nvarchar(25)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Unique product identification number.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>MakeFlag</span></td>
+        <td class="tr"><span>Flag(bit)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>1</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">0 = Product is purchased, 1 = Product is manufactured in-house.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>FinishedGoodsFlag</span></td>
+        <td class="tr"><span>Flag(bit)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>1</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">0 = Product is not a salable item. 1 = Product is salable.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Color</span></td>
+        <td class="tr"><span>nvarchar(15)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Product color.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SafetyStockLevel</span></td>
+        <td class="tr"><span>smallint</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Minimum inventory quantity.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ReorderPoint</span></td>
+        <td class="tr"><span>smallint</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Inventory level that triggers a purchase order or work order.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>StandardCost</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Standard cost of the product.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ListPrice</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Selling price.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Size</span></td>
+        <td class="tr"><span>nvarchar(5)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Product size.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>SizeUnitMeasureCode</span></td>
+        <td class="tr"><span>nchar(3)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Unit of measure for Size column.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>WeightUnitMeasureCode</span></td>
+        <td class="tr"><span>nchar(3)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Unit of measure for Weight column.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Weight</span></td>
+        <td class="tr"><span>decimal(8,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Product weight.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DaysToManufacture</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Number of days required to manufacture the product.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ProductLine</span></td>
+        <td class="tr"><span>nchar(2)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">R = Road, M = Mountain, T = Touring, S = Standard</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Class</span></td>
+        <td class="tr"><span>nchar(2)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">H = High, M = Medium, L = Low</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Style</span></td>
+        <td class="tr"><span>nchar(2)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">W = Womens, M = Mens, U = Universal</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>ProductSubcategoryID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Product is a member of this product subcategory. Foreign key to ProductSubCategory.ProductSubCategoryID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>ProductModelID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Product is a member of this product model. Foreign key to ProductModel.ProductModelID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SellStartDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date the product was available for sale.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SellEndDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date the product was no longer available for sale.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>DiscontinuedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date the product was discontinued.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>rowguid</span></td>
+        <td class="tr"><span>uniqueidentifier</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>newid()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Product_ProductID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_Product_Name</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index.</p><br><ul class="il">
+          <li>Name</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_Product_ProductNumber</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index.</p><br><ul class="il">
+          <li>ProductNumber</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_Product_rowguid</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index. Used to support replication samples.</p><br><ul class="il">
+          <li>rowguid</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Production.ProductModel.html">Production.ProductModel</a></h5><br><br><ul class="rl">
+          <li>ProductModelID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.ProductSubcategory.html">Production.ProductSubcategory</a></h5><br><br><ul class="rl">
+          <li>ProductSubcategoryID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.UnitMeasure.html">Production.UnitMeasure</a></h5><br><br><ul class="rl">
+          <li>UnitMeasureCode<span class="rlc">
+													(SizeUnitMeasureCode)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.UnitMeasure.html">Production.UnitMeasure</a></h5><br><br><ul class="rl">
+          <li>UnitMeasureCode<span class="rlc">
+													(WeightUnitMeasureCode)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Production.BillOfMaterials.html">Production.BillOfMaterials</a></h5><br><br><ul class="rl">
+          <li>ComponentID<span class="rlc">
+													(ProductID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.BillOfMaterials.html">Production.BillOfMaterials</a></h5><br><br><ul class="rl">
+          <li>ProductAssemblyID<span class="rlc">
+													(ProductID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.ProductCostHistory.html">Production.ProductCostHistory</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.ProductDocument.html">Production.ProductDocument</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.ProductInventory.html">Production.ProductInventory</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.ProductListPriceHistory.html">Production.ProductListPriceHistory</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.ProductProductPhoto.html">Production.ProductProductPhoto</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.ProductReview.html">Production.ProductReview</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.TransactionHistory.html">Production.TransactionHistory</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Production.WorkOrder.html">Production.WorkOrder</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.ProductVendor.html">Purchasing.ProductVendor</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.PurchaseOrderDetail.html">Purchasing.PurchaseOrderDetail</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.ShoppingCartItem.html">Sales.ShoppingCartItem</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Sales.SpecialOfferProduct.html">Sales.SpecialOfferProduct</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Function <h5><a href="./dbo.ufnGetProductDealerPrice.html">dbo.ufnGetProductDealerPrice</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul><br></li>
+      <li class="un">Function <h5><a href="./dbo.ufnGetProductListPrice.html">dbo.ufnGetProductListPrice</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul><br></li>
+      <li class="un">Function <h5><a href="./dbo.ufnGetProductStandardCost.html">dbo.ufnGetProductStandardCost</a></h5><br><br><ul class="rl">
+          <li>ProductID</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./dbo.uspGetBillOfMaterials.html">dbo.uspGetBillOfMaterials</a></h5><br><br><ul class="rl">
+          <li>ListPrice</li>
+          <li>Name</li>
+          <li>ProductID</li>
+          <li>StandardCost</li>
+        </ul><br></li>
+      <li class="un">Procedure <h5><a href="./dbo.uspGetWhereUsedProductID.html">dbo.uspGetWhereUsedProductID</a></h5><br><br><ul class="rl">
+          <li>ListPrice</li>
+          <li>Name</li>
+          <li>ProductID</li>
+          <li>StandardCost</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Production.vProductAndDescription.html">Production.vProductAndDescription</a></h5><br><br><ul class="rl">
+          <li>Name</li>
+          <li>ProductID</li>
+          <li>ProductModelID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

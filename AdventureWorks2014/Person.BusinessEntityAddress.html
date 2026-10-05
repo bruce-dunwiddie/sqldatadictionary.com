@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Person.BusinessEntityAddress</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Person.BusinessEntityAddress">Person.BusinessEntityAddress</a></span><span class="rc">
+									(19,614 rows)
+								</span></h3><br><p class="td">Cross-reference table mapping customers, vendors, and employees to their addresses.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>BusinessEntityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key. Foreign key to BusinessEntity.BusinessEntityID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>AddressID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key. Foreign key to Address.AddressID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>AddressTypeID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key. Foreign key to AddressType.AddressTypeID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>rowguid</span></td>
+        <td class="tr"><span>uniqueidentifier</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>newid()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_BusinessEntityAddress_BusinessEntityID_AddressID_AddressTypeID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>BusinessEntityID</li>
+          <li>AddressID</li>
+          <li>AddressTypeID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_BusinessEntityAddress_rowguid</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index. Used to support replication samples.</p><br><ul class="il">
+          <li>rowguid</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_BusinessEntityAddress_AddressID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>AddressID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_BusinessEntityAddress_AddressTypeID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>AddressTypeID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Person.Address.html">Person.Address</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Person.AddressType.html">Person.AddressType</a></h5><br><br><ul class="rl">
+          <li>AddressTypeID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Person.BusinessEntity.html">Person.BusinessEntity</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">View <h5><a href="./HumanResources.vEmployee.html">HumanResources.vEmployee</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>BusinessEntityID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Purchasing.vVendorWithAddresses.html">Purchasing.vVendorWithAddresses</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>AddressTypeID</li>
+          <li>BusinessEntityID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vIndividualCustomer.html">Sales.vIndividualCustomer</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>AddressTypeID</li>
+          <li>BusinessEntityID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vSalesPerson.html">Sales.vSalesPerson</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>BusinessEntityID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vStoreWithAddresses.html">Sales.vStoreWithAddresses</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>AddressTypeID</li>
+          <li>BusinessEntityID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

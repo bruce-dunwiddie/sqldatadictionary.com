@@ -1,0 +1,168 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Purchasing.Vendor</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Purchasing.Vendor">Purchasing.Vendor</a></span><span class="rc">
+									(104 rows)
+								</span></h3><br><p class="td">Companies from whom Adventure Works Cycles purchases parts or other goods.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>BusinessEntityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key for Vendor records.  Foreign key to BusinessEntity.BusinessEntityID</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>AccountNumber</span></td>
+        <td class="tr"><span>AccountNumber(nvarchar(15))</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Vendor account (identification) number.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Name</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Company name.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>CreditRating</span></td>
+        <td class="tr"><span>tinyint</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">1 = Superior, 2 = Excellent, 3 = Above average, 4 = Average, 5 = Below average</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>PreferredVendorStatus</span></td>
+        <td class="tr"><span>Flag(bit)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>1</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">0 = Do not use if another vendor is available. 1 = Preferred over other vendors supplying the same product.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ActiveFlag</span></td>
+        <td class="tr"><span>Flag(bit)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>1</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">0 = Vendor no longer used. 1 = Vendor is actively used.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>PurchasingWebServiceURL</span></td>
+        <td class="tr"><span>nvarchar(1024)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Vendor URL.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Vendor_BusinessEntityID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_Vendor_AccountNumber</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index.</p><br><ul class="il">
+          <li>AccountNumber</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Person.BusinessEntity.html">Person.BusinessEntity</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Purchasing.ProductVendor.html">Purchasing.ProductVendor</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.PurchaseOrderHeader.html">Purchasing.PurchaseOrderHeader</a></h5><br><br><ul class="rl">
+          <li>VendorID<span class="rlc">
+													(BusinessEntityID)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Triggers:</h4><br><ul>
+      <li class="in">
+        <h5><a id="Purchasing.dVendor">dVendor</a></h5><span class="rlc">
+										(Instead Of
+									Delete)</span><br><br><p class="id">INSTEAD OF DELETE trigger which keeps Vendors from being deleted.</p><br></li>
+    </ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Function <h5><a href="./dbo.ufnGetContactInformation.html">dbo.ufnGetContactInformation</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Purchasing.vVendorWithAddresses.html">Purchasing.vVendorWithAddresses</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>Name</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Purchasing.vVendorWithContacts.html">Purchasing.vVendorWithContacts</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>Name</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

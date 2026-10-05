@@ -1,0 +1,230 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Purchasing.PurchaseOrderHeader</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Purchasing.PurchaseOrderHeader">Purchasing.PurchaseOrderHeader</a></span><span class="rc">
+									(4,012 rows)
+								</span></h3><br><p class="td">General purchase order information. See PurchaseOrderDetail.</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>PurchaseOrderID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir">X</td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>RevisionNumber</span></td>
+        <td class="tr"><span>tinyint</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Incremental number to track changes to the purchase order over time.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Status</span></td>
+        <td class="tr"><span>tinyint</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>1</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Order current status. 1 = Pending; 2 = Approved; 3 = Rejected; 4 = Complete</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>EmployeeID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Employee who created the purchase order. Foreign key to Employee.BusinessEntityID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>VendorID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Vendor with whom the purchase order is placed. Foreign key to Vendor.BusinessEntityID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>ShipMethodID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Shipping method. Foreign key to ShipMethod.ShipMethodID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>OrderDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Purchase order creation date.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ShipDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Estimated shipment date from the vendor.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SubTotal</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0.00</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Purchase order subtotal. Computed as SUM(PurchaseOrderDetail.LineTotal)for the appropriate PurchaseOrderID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TaxAmt</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0.00</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Tax amount.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>Freight</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>0.00</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Shipping cost.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TotalDue</span></td>
+        <td class="tr"><span>money</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Total due to vendor. Computed as Subtotal + TaxAmt + Freight.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_PurchaseOrderHeader_PurchaseOrderID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>PurchaseOrderID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_PurchaseOrderHeader_EmployeeID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>EmployeeID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_PurchaseOrderHeader_VendorID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>VendorID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./HumanResources.Employee.html">HumanResources.Employee</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID<span class="rlc">
+													(EmployeeID)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.ShipMethod.html">Purchasing.ShipMethod</a></h5><br><br><ul class="rl">
+          <li>ShipMethodID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.Vendor.html">Purchasing.Vendor</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID<span class="rlc">
+													(VendorID)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Referenced by:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Purchasing.PurchaseOrderDetail.html">Purchasing.PurchaseOrderDetail</a></h5><br><br><ul class="rl">
+          <li>PurchaseOrderID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Triggers:</h4><br><ul>
+      <li class="in">
+        <h5><a id="Purchasing.uPurchaseOrderHeader">uPurchaseOrderHeader</a></h5><span class="rlc">
+										(After
+									Update)</span><br><br><p class="id">AFTER UPDATE trigger that updates the RevisionNumber and ModifiedDate columns in the PurchaseOrderHeader table.</p><br></li>
+    </ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Trigger <h5><a href="./Purchasing.PurchaseOrderDetail.html#Purchasing.iPurchaseOrderDetail">Purchasing.iPurchaseOrderDetail</a>
+										on <a href="./Purchasing.PurchaseOrderDetail.html">Purchasing.PurchaseOrderDetail</a></h5><br><br><ul class="rl">
+          <li>PurchaseOrderID</li>
+          <li>SubTotal</li>
+        </ul><br></li>
+      <li class="un">Trigger <h5><a href="./Purchasing.PurchaseOrderDetail.html#Purchasing.uPurchaseOrderDetail">Purchasing.uPurchaseOrderDetail</a>
+										on <a href="./Purchasing.PurchaseOrderDetail.html">Purchasing.PurchaseOrderDetail</a></h5><br><br><ul class="rl">
+          <li>PurchaseOrderID</li>
+          <li>SubTotal</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

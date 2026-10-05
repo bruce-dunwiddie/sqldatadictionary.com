@@ -1,0 +1,297 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Purchasing.SupplierTransactions</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Purchasing.SupplierTransactions">Purchasing.SupplierTransactions</a></span><span class="rc">
+									(2,438 rows)
+								</span></h3><br><p class="td">All financial transactions that are supplier-related</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK</span></td>
+        <td class="cr"><span>SupplierTransactionID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>NEXT VALUE FOR [Sequences].[TransactionID]</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Numeric ID used to refer to a supplier transaction within the database</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>SupplierID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Supplier for this transaction</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>TransactionTypeID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Type of transaction</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>PurchaseOrderID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ID of an purchase order (for transactions associated with a purchase order)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>PaymentMethodID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ID of a payment method (for transactions involving payments)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>SupplierInvoiceNumber</span></td>
+        <td class="tr"><span>nvarchar(20)</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Invoice number for an invoice received from the supplier</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TransactionDate</span></td>
+        <td class="tr"><span>date</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date for the transaction</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>AmountExcludingTax</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Transaction amount (excluding tax)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TaxAmount</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Tax amount calculated</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>TransactionAmount</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Transaction amount (including tax)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>OutstandingBalance</span></td>
+        <td class="tr"><span>decimal(18,2)</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Amount still outstanding for this transaction</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>FinalizationDate</span></td>
+        <td class="tr"><span>date</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date that this transaction was finalized (if it has been)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>IsFinalized</span></td>
+        <td class="tr"><span>bit</span></td>
+        <td class="ir"></td>
+        <td class="nr">X</td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Is this transaction finalized (invoices, credits and payments have been matched)</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>FK</span></td>
+        <td class="cr"><span>LastEditedBy</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>LastEditedWhen</span></td>
+        <td class="tr"><span>datetime2</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>sysdatetime()</span></td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_Purchasing_SupplierTransactions</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>
+													(0.04% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>SupplierTransactionID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>CX_Purchasing_SupplierTransactions</h5>
+        <ul class="io">
+          <li>(Clustered)</li>
+          <li>
+													(0.11% Selectivity)
+												</li>
+        </ul><br><br><ul class="il">
+          <li>TransactionDate</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Purchasing_SupplierTransactions_PaymentMethodID</h5>
+        <ul class="io">
+          <li>
+													(0.11% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>TransactionDate</li>
+          <li>PaymentMethodID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Purchasing_SupplierTransactions_PurchaseOrderID</h5>
+        <ul class="io">
+          <li>
+													(0.04% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>TransactionDate</li>
+          <li>PurchaseOrderID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Purchasing_SupplierTransactions_SupplierID</h5>
+        <ul class="io">
+          <li>
+													(0.06% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>TransactionDate</li>
+          <li>SupplierID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>FK_Purchasing_SupplierTransactions_TransactionTypeID</h5>
+        <ul class="io">
+          <li>
+													(0.09% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Auto-created to support a foreign key</p><br><ul class="il">
+          <li>TransactionDate</li>
+          <li>TransactionTypeID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_Purchasing_SupplierTransactions_IsFinalized</h5>
+        <ul class="io">
+          <li>
+													(0.11% Selectivity)
+												</li>
+        </ul><br><br><p class="id">Index used to quickly locate unfinalized transactions</p><br><ul class="il">
+          <li>TransactionDate</li>
+          <li>IsFinalized</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Application.PaymentMethods.html">Application.PaymentMethods</a></h5><br><br><ul class="rl">
+          <li>PaymentMethodID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.People.html">Application.People</a></h5><br><br><ul class="rl">
+          <li>PersonID<span class="rlc">
+													(LastEditedBy)
+												</span></li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Application.TransactionTypes.html">Application.TransactionTypes</a></h5><br><br><ul class="rl">
+          <li>TransactionTypeID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.PurchaseOrders.html">Purchasing.PurchaseOrders</a></h5><br><br><ul class="rl">
+          <li>PurchaseOrderID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Purchasing.Suppliers.html">Purchasing.Suppliers</a></h5><br><br><ul class="rl">
+          <li>SupplierID</li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./Integration.GetTransactionUpdates.html">Integration.GetTransactionUpdates</a></h5><br><br><ul class="rl">
+          <li>AmountExcludingTax</li>
+          <li>IsFinalized</li>
+          <li>LastEditedWhen</li>
+          <li>OutstandingBalance</li>
+          <li>PaymentMethodID</li>
+          <li>PurchaseOrderID</li>
+          <li>SupplierID</li>
+          <li>SupplierInvoiceNumber</li>
+          <li>SupplierTransactionID</li>
+          <li>TaxAmount</li>
+          <li>TransactionAmount</li>
+          <li>TransactionDate</li>
+          <li>TransactionTypeID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

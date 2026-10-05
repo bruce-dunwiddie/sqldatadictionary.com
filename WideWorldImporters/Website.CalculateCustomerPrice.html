@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Website.CalculateCustomerPrice</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="https://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+								Scalar
+							
+						Function <a id="Website.CalculateCustomerPrice">Website.CalculateCustomerPrice</a></span></h3><br><table class="f b">
+      <tr class="h">
+        <th>Parameter</th>
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td><span>@CustomerID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s"><span></span></td>
+      </tr>
+      <tr>
+        <td><span>@StockItemID</span></td>
+        <td class="s"><span>int</span></td>
+        <td class="s"><span></span></td>
+      </tr>
+      <tr>
+        <td><span>@PricingDate</span></td>
+        <td class="s"><span>date</span></td>
+        <td class="s"><span></span></td>
+      </tr>
+    </table><br><h4>Result:</h4><br><table class="b s">
+      <tr class="h">
+        <th class="s"><span>Data Type</span></th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td class="s"><span>decimal(18,2)</span></td>
+        <td class="s c">X</td>
+      </tr>
+    </table><br><h4>Used by:</h4><br><ul>
+      <li class="un">Procedure <h5><a href="./Website.InsertCustomerOrders.html">Website.InsertCustomerOrders</a></h5><br><br></li>
+    </ul>
+    <h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./Sales.Customers.html">Sales.Customers</a></h5><br><br><ul class="rl">
+          <li>BuyingGroupID</li>
+          <li>CustomerCategoryID</li>
+          <li>CustomerID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.SpecialDeals.html">Sales.SpecialDeals</a></h5><br><br><ul class="rl">
+          <li>BuyingGroupID</li>
+          <li>CustomerCategoryID</li>
+          <li>CustomerID</li>
+          <li>DiscountAmount</li>
+          <li>DiscountPercentage</li>
+          <li>EndDate</li>
+          <li>StartDate</li>
+          <li>StockGroupID</li>
+          <li>StockItemID</li>
+          <li>UnitPrice</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Warehouse.StockItems.html">Warehouse.StockItems</a></h5><br><br><ul class="rl">
+          <li>StockItemID</li>
+          <li>UnitPrice</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Warehouse.StockItemStockGroups.html">Warehouse.StockItemStockGroups</a></h5><br><br><ul class="rl">
+          <li>StockGroupID</li>
+          <li>StockItemID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

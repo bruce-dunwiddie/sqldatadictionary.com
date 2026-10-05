@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sales.vStoreWithAddresses</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						View <a id="Sales.vStoreWithAddresses">Sales.vStoreWithAddresses</a></span></h3><br><p class="td">Stores (including store addresses) that sell Adventure Works Cycles products to consumers.</p><br><table class="v b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td class="cr"><span>BusinessEntityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Name</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>AddressType</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>AddressLine1</span></td>
+        <td class="tr"><span>nvarchar(60)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>AddressLine2</span></td>
+        <td class="tr"><span>nvarchar(60)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>City</span></td>
+        <td class="tr"><span>nvarchar(30)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>StateProvinceName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>PostalCode</span></td>
+        <td class="tr"><span>nvarchar(15)</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>CountryRegionName</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./Person.Address.html">Person.Address</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>AddressLine1</li>
+          <li>AddressLine2</li>
+          <li>City</li>
+          <li>PostalCode</li>
+          <li>StateProvinceID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.AddressType.html">Person.AddressType</a></h5><br><br><ul class="rl">
+          <li>AddressTypeID</li>
+          <li>Name</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.BusinessEntityAddress.html">Person.BusinessEntityAddress</a></h5><br><br><ul class="rl">
+          <li>AddressID</li>
+          <li>AddressTypeID</li>
+          <li>BusinessEntityID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.CountryRegion.html">Person.CountryRegion</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+          <li>Name</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Person.StateProvince.html">Person.StateProvince</a></h5><br><br><ul class="rl">
+          <li>CountryRegionCode</li>
+          <li>Name</li>
+          <li>StateProvinceID</li>
+        </ul><br></li>
+      <li class="un">Table <h5><a href="./Sales.Store.html">Sales.Store</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>Name</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

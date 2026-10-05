@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Production.vProductModelInstructions</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						View <a id="Production.vProductModelInstructions">Production.vProductModelInstructions</a></span></h3><br><p class="td">Displays the content from each element in the xml column Instructions for each product in the Production.ProductModel table that has manufacturing instructions.</p><br><table class="v b">
+      <tr class="h">
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Nullable</th>
+      </tr>
+      <tr>
+        <td class="cr"><span>ProductModelID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Name</span></td>
+        <td class="tr"><span>Name(nvarchar(50))</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Instructions</span></td>
+        <td class="tr"><span>nvarchar(max)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>LocationID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>SetupHours</span></td>
+        <td class="tr"><span>decimal(9,4)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>MachineHours</span></td>
+        <td class="tr"><span>decimal(9,4)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>LaborHours</span></td>
+        <td class="tr"><span>decimal(9,4)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>LotSize</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>Step</span></td>
+        <td class="tr"><span>nvarchar(1024)</span></td>
+        <td class="nr">X</td>
+      </tr>
+      <tr>
+        <td class="cr"><span>rowguid</span></td>
+        <td class="tr"><span>uniqueidentifier</span></td>
+        <td class="nr"></td>
+      </tr>
+      <tr>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="nr"></td>
+      </tr>
+    </table><br><h4>Uses:</h4><br><ul>
+      <li class="un">Table <h5><a href="./Production.ProductModel.html">Production.ProductModel</a></h5><br><br><ul class="rl">
+          <li>Instructions</li>
+          <li>ModifiedDate</li>
+          <li>Name</li>
+          <li>ProductModelID</li>
+          <li>rowguid</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Person.BusinessEntityContact</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <p class="demo">
+						Generated using <a href="http://www.sqldatadictionary.com">SQL Data Dictionary</a> demo version.
+					</p><br><h3><span class="tn">
+						Table <a id="Person.BusinessEntityContact">Person.BusinessEntityContact</a></span><span class="rc">
+									(909 rows)
+								</span></h3><br><p class="td">Cross-reference table mapping stores, vendors, and employees to people</p><br><table class="t b">
+      <tr class="h">
+        <th class="s"> </th>
+        <th>Column</th>
+        <th class="s">Data Type</th>
+        <th class="s">Identity</th>
+        <th class="s">Nullable</th>
+        <th class="s">Default</th>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>BusinessEntityID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key. Foreign key to BusinessEntity.BusinessEntityID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>PersonID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key. Foreign key to Person.BusinessEntityID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										PK, FK</span></td>
+        <td class="cr"><span>ContactTypeID</span></td>
+        <td class="tr"><span>int</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span></span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Primary key.  Foreign key to ContactType.ContactTypeID.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span>
+										UK</span></td>
+        <td class="cr"><span>rowguid</span></td>
+        <td class="tr"><span>uniqueidentifier</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>newid()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample.</td>
+      </tr>
+      <tr>
+        <td class="pr"><span></span></td>
+        <td class="cr"><span>ModifiedDate</span></td>
+        <td class="tr"><span>datetime</span></td>
+        <td class="ir"></td>
+        <td class="nr"></td>
+        <td class="dr"><span>getdate()</span></td>
+      </tr>
+      <tr class="cd">
+        <td colspan="6">Date and time the record was last updated.</td>
+      </tr>
+    </table><br><h4>Indexes:</h4><br><ul>
+      <li class="in">
+        <h5>PK_BusinessEntityContact_BusinessEntityID_PersonID_ContactTypeID</h5>
+        <ul class="io">
+          <li>(Primary Key)</li>
+          <li>(Clustered)</li>
+        </ul><br><br><p class="id">Primary key (clustered) constraint</p><br><ul class="il">
+          <li>BusinessEntityID</li>
+          <li>PersonID</li>
+          <li>ContactTypeID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>AK_BusinessEntityContact_rowguid</h5>
+        <ul class="io">
+          <li>(Unique)</li>
+        </ul><br><br><p class="id">Unique nonclustered index. Used to support replication samples.</p><br><ul class="il">
+          <li>rowguid</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_BusinessEntityContact_ContactTypeID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>ContactTypeID</li>
+        </ul>
+      </li><br><li class="in">
+        <h5>IX_BusinessEntityContact_PersonID</h5>
+        <ul class="io"></ul><br><br><p class="id">Nonclustered index.</p><br><ul class="il">
+          <li>PersonID</li>
+        </ul>
+      </li><br></ul>
+    <h4>References:</h4><br><ul>
+      <li class="un">
+        <h5><a href="./Person.BusinessEntity.html">Person.BusinessEntity</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Person.ContactType.html">Person.ContactType</a></h5><br><br><ul class="rl">
+          <li>ContactTypeID</li>
+        </ul>
+      </li><br><li class="un">
+        <h5><a href="./Person.Person.html">Person.Person</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID<span class="rlc">
+													(PersonID)
+												</span></li>
+        </ul>
+      </li><br></ul>
+    <h4>Used by:</h4><br><ul>
+      <li class="un">Function <h5><a href="./dbo.ufnGetContactInformation.html">dbo.ufnGetContactInformation</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>ContactTypeID</li>
+          <li>PersonID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Purchasing.vVendorWithContacts.html">Purchasing.vVendorWithContacts</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>ContactTypeID</li>
+          <li>PersonID</li>
+        </ul><br></li>
+      <li class="un">View <h5><a href="./Sales.vStoreWithContacts.html">Sales.vStoreWithContacts</a></h5><br><br><ul class="rl">
+          <li>BusinessEntityID</li>
+          <li>ContactTypeID</li>
+          <li>PersonID</li>
+        </ul><br></li>
+    </ul>
+  </body>
+</html>
